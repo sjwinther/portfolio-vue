@@ -6,12 +6,16 @@
 
 <script>
 import BoldHeadline from '../components/BoldHeadline';
+const title = 'Contact';
 
 export default {
-  name: 'Home',
+  name: title,
+  metaInfo: {
+    title: title
+  },
   data() {
     return {
-      message: 'Hello Home'
+      message: 'Hello Contact'
     };
   },
   components: {

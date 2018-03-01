@@ -1,25 +1,35 @@
 <template>
   <div id="app" class="min-h-screen flex flex-col">
 
-    <nav class="text-center border-b border-grey-lighter p-4">
-      <ul class="list-reset">
+    <nav class="border-b border-grey-lighter p-4">
+
+      <ul class="text-center list-reset">
         <router-link v-for="link in routerlinks" :to="link.path" :key="link.index" tag="li" class="inline-block text-grey-darker mx-1">
           <a class="hover:bg-grey-lighter rounded p-2">{{ link.name }}</a>
         </router-link>
       </ul>
+
     </nav>
 
-    <div class="flex-auto flex items-center justify-center">
-      <router-view></router-view>
+    <div class="flex-auto flex items-center justify-center text-center">
+
+      <router-view />
+
     </div>
 
   </div>
 </template>
 
 <script>
-import routes from './router.js';
+import routes from './router';
 const routerlinks = routes.options.routes;
+
 export default {
+  metaInfo: {
+    titleTemplate: title => {
+      return title ? `${title} | Sebastian Winther` : 'Sebastian Winther';
+    }
+  },
   data() {
     return {
       routerlinks

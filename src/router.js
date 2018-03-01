@@ -1,4 +1,4 @@
-import VueRouter from 'vue-router';
+import Router from 'vue-router';
 
 const routes = [
   {
@@ -7,12 +7,17 @@ const routes = [
     component: require('./views/Home.vue').default
   },
   {
-    path: '/project/',
-    name: 'Project',
-    component: require('./views/Project.vue').default
+    path: '/projects/',
+    name: 'Projects',
+    component: require('./views/Projects.vue').default
+  },
+  {
+    path: '/contact/',
+    name: 'Contact',
+    component: require('./views/Contact.vue').default
   }
 ];
 
-export default new VueRouter({
+export default new Router({
   routes
 });
