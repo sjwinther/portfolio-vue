@@ -20,6 +20,6 @@ export default {
 @tailwind utilities;
 
 #app {
-  @apply .font-sans .antialiased .text-black;
+  @apply .font-plex-sans .antialiased .text-black;
 }
 </style>

@@ -189,6 +189,22 @@ module.exports = {
   */
 
   fonts: {
+    'plex-sans': [
+      'IBM Plex Sans',
+      'system-ui',
+      'BlinkMacSystemFont',
+      '-apple-system',
+      'Segoe UI',
+      'Roboto',
+      'Oxygen',
+      'Ubuntu',
+      'Cantarell',
+      'Fira Sans',
+      'Droid Sans',
+      'Helvetica Neue',
+      'sans-serif'
+    ],
+    'plex-mono': ['IBM Plex Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
     sans: [
       'system-ui',
       'BlinkMacSystemFont',
