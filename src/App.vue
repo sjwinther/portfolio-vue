@@ -1,39 +1,33 @@
 <template>
   <div id="app" class="min-h-screen flex flex-col">
 
-    <nav class="border-b border-grey-lighter p-4">
-
+    <nav class="fixed pin-x pin-t border-b border-grey-lighter p-4">
+      <div class="absolute pin-y pin-l p-4">
+        S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
+      </div>
       <ul class="text-center list-reset">
-        <router-link v-for="link in routerlinks" :to="link.path" :key="link.index" tag="li" class="inline-block text-grey-darker mx-1">
-          <a class="hover:bg-grey-lighter rounded p-2">{{ link.name }}</a>
+        <router-link to="/" tag="li" class="inline-block text-black">
+          <a class="font-bold hover:bg-grey-lighter rounded p-2">← Home</a>
         </router-link>
       </ul>
-
+      <div class="hidden sm:block absolute pin-y pin-r p-4">
+        Digital Designer
+      </div>
     </nav>
 
-    <div class="flex-auto flex items-center justify-center text-center">
-
+    <div class="flex-auto flex items-center justify-center">
       <router-view />
-
     </div>
 
   </div>
 </template>
 
 <script>
-import routes from './router';
-const routerlinks = routes.options.routes;
-
 export default {
   metaInfo: {
     titleTemplate: title => {
-      return title ? `${title} | Sebastian Winther` : 'Sebastian Winther';
+      return title ? `${title} | Sebastian Winther - Digital Designer` : 'Sebastian Winther - Digital Designer';
     }
-  },
-  data() {
-    return {
-      routerlinks
-    };
   }
 };
 </script>
@@ -47,7 +41,10 @@ export default {
   @apply .font-plex-sans .antialiased .text-black;
 }
 nav .router-link-exact-active a {
-  @apply .text-black;
+  @apply .text-transparent;
+}
+nav .router-link-exact-active a:hover {
+  @apply .bg-transparent;
 }
 .router-view {
   animation: 0.6s fade-in;

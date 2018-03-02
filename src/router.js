@@ -7,14 +7,9 @@ const routes = [
     component: require('./views/Home.vue').default
   },
   {
-    path: '/projects/',
-    name: 'Projects',
-    component: require('./views/Projects.vue').default
-  },
-  {
-    path: '/contact/',
-    name: 'Contact',
-    component: require('./views/Contact.vue').default
+    path: '/:id',
+    name: 'Project',
+    component: require('./views/Project.vue').default
   }
 ];
 

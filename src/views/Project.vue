@@ -1,12 +1,11 @@
 <template>
   <div class="router-view">
-    <bold-headline>{{ message }}</bold-headline>
+    <p class="font-bold text-3xl sm:text-5xl border-b-4 border-teal-lighter m-4">{{ message }}</p>
   </div>
 </template>
 
 <script>
-import BoldHeadline from '../components/BoldHeadline';
-const title = 'Contact';
+const title = 'Project';
 
 export default {
   name: title,
@@ -15,11 +14,8 @@ export default {
   },
   data() {
     return {
-      message: 'Hello Contact'
+      message: 'Project'
     };
-  },
-  components: {
-    BoldHeadline
   }
 };
 </script>
