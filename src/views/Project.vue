@@ -1,8 +1,11 @@
 <template>
-  <div class="router-view">
-    <div class="text-center my-12">
-      <p class="inline-block font-bold text-3xl sm:text-5xl border-b-4 border-teal-lighter">{{ this.project[0].data.title[0].text }}</p>
+  <div v-if="project" class="router-view">
+    <h1 class="inline-block font-bold text-3xl sm:text-5xl border-b-4 border-teal-lighter mt-12 mb-4">{{ projectTitle }}</h1>
+    <span class="block text-grey-dark uppercase mb-8">{{ projectDate }}</span>
+    <div class="mb-12">
+      <p>{{ projectDescription }}</p>
     </div>
+    <img :src="projectPreview" alt="">
   </div>
 </template>
 
@@ -18,13 +21,27 @@ export default {
       project: ''
     };
   },
+  computed: {
+    projectTitle: function() {
+      return this.project[0].data.title[0].text;
+    },
+    projectDate: function() {
+      return this.project[0].data.date;
+    },
+    projectDescription: function() {
+      return this.project[0].data.description[0].text;
+    },
+    projectPreview: function() {
+      return this.project[0].data.preview.url;
+    }
+  },
   methods: {
     getContent() {
       const uid = this.uid;
       const Prismic = require('prismic-javascript');
       Prismic.getApi('https://sebastianwinther.prismic.io/api/v2')
         .then(function(api) {
-          return api.query(Prismic.Predicates.at('my.blogpost.uid', uid));
+          return api.query(Prismic.Predicates.at('my.project.uid', uid));
         })
         .then(
           response => {

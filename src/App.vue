@@ -1,6 +1,6 @@
 <template>
 
-  <div id="app" class="min-h-screen flex flex-col pt-12">
+  <div id="app" class="py-12">
 
     <nav class="fixed pin-x pin-t z-10 leading-none bg-white border-b border-grey-lighter p-4">
       <div class="absolute pin-y pin-l p-4">
@@ -16,7 +16,9 @@
       </div>
     </nav>
 
-    <router-view :projects="projects"/>
+    <div class="max-w-md mx-auto">
+      <router-view :projects="projects"/>
+    </div>
 
   </div>
 
@@ -36,11 +38,10 @@ export default {
   },
   methods: {
     getContent() {
-      const prismic = require('prismic-javascript');
-      prismic
-        .getApi('https://sebastianwinther.prismic.io/api/v2')
+      const Prismic = require('prismic-javascript');
+      Prismic.getApi('https://sebastianwinther.prismic.io/api/v2')
         .then(function(api) {
-          return api.query('');
+          return api.query(Prismic.Predicates.at('document.type', 'project'));
         })
         .then(
           response => {
@@ -70,7 +71,7 @@ nav .router-link-exact-active a {
   @apply .text-transparent .cursor-default;
 }
 nav .router-link-exact-active a:hover {
-  @apply .bg-transparent .cursor-default;
+  @apply .bg-transparent;
 }
 .router-view {
   animation: 0.6s fade-in;
@@ -83,12 +84,14 @@ button,
 .transition {
   transition: 0.2s ease-out;
 }
+p {
+  @apply .leading-normal .text-grey-darkest .mb-4;
+}
 
 @keyframes fade-in {
   from {
     opacity: 0;
   }
-  ,
   to {
     opacity: 1;
   }
