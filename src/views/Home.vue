@@ -13,33 +13,8 @@
 
 <script>
 export default {
-  name: 'Home',
-  data() {
-    return {
-      projects: ''
-    };
-  },
-  methods: {
-    getContent() {
-      const prismic = require('prismic-javascript');
-      prismic
-        .getApi('https://sebastianwinther.prismic.io/api/v2')
-        .then(function(api) {
-          return api.query('');
-        })
-        .then(
-          response => {
-            this.projects = response.results;
-          },
-          function(err) {
-            console.log('Something went wrong: ', err);
-          }
-        );
-    }
-  },
-  beforeMount() {
-    this.getContent();
-  }
+  props: ['projects'],
+  name: 'Home'
 };
 </script>
 
