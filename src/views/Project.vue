@@ -28,7 +28,11 @@ export default {
         })
         .then(
           response => {
-            this.project = response.results;
+            if (response.results.length > 0) {
+              this.project = response.results;
+            } else {
+              return this.$router.push('/404');
+            }
           },
           function(err) {
             console.log('Something went wrong: ', err);
