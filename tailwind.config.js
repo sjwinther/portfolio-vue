@@ -618,7 +618,8 @@ module.exports = {
     '3': '0.75rem',
     '4': '1rem',
     '6': '1.5rem',
-    '8': '2rem'
+    '8': '2rem',
+    '12': '3rem'
   },
 
   /*
@@ -645,7 +646,8 @@ module.exports = {
     '3': '0.75rem',
     '4': '1rem',
     '6': '1.5rem',
-    '8': '2rem'
+    '8': '2rem',
+    '12': '3rem'
   },
 
   /*
@@ -828,7 +830,7 @@ module.exports = {
     svgFill: [],
     svgStroke: [],
     textAlign: ['responsive'],
-    textColors: ['responsive', 'hover'],
+    textColors: ['responsive', 'hover', 'group-hover'],
     textSizes: ['responsive'],
     textStyle: ['responsive', 'hover'],
     tracking: ['responsive'],

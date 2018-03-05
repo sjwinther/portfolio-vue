@@ -1,10 +1,13 @@
 <template>
   <div class="router-view">
-    <ol>
-      <li v-for="post in posts" class="font-bold text-3xl sm:text-5xl border-b-4 border-teal-lighter m-4">
-        <router-link :to="post.uid">{{ post.data.title[0].text }}</router-link>
-      </li>
-    </ol>
+    <div class="text-center my-12">
+      <p class="inline-block font-bold text-3xl sm:text-5xl border-b-4 border-teal-lighter">{{ $route.name }}</p>
+    </div>
+    <div class="text-center">
+      <ul class="list-reset">
+        <router-link v-for="project in projects" :to="'/project/' + project.uid" :key="project.index" tag="li"><a class="group inline-block font-bold text-lg sm:text-xl border-b-2 border-teal-lightest hover:border-teal-lighter m-2">{{ project.data.title[0].text }} <span class="text-teal-lightest group-hover:text-teal-lighter transition">→</span></a></router-link>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -13,23 +16,20 @@ export default {
   name: 'Home',
   data() {
     return {
-      posts: []
+      projects: ''
     };
   },
   methods: {
     getContent() {
-      let req;
-      let Prismic = require('prismic-javascript');
-
-      let apiEndpoint = 'https://sebastianwinther.prismic.io/api/v2';
-
-      Prismic.getApi(apiEndpoint, { req: req })
+      const prismic = require('prismic-javascript');
+      prismic
+        .getApi('https://sebastianwinther.prismic.io/api/v2')
         .then(function(api) {
-          return api.query(''); // An empty query will return all the documents
+          return api.query('');
         })
         .then(
           response => {
-            this.posts = response.results;
+            this.projects = response.results;
           },
           function(err) {
             console.log('Something went wrong: ', err);

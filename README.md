@@ -10,3 +10,4 @@
 * [ ] Actually build the site
 * [ ] Kill useless CSS
 * [ ] Meta tags blargh
+* [ ] [Get a 404 page up and running](https://help.github.com/articles/creating-a-custom-404-page-for-your-github-pages-site/)

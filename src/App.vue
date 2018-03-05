@@ -1,7 +1,8 @@
 <template>
-  <div id="app" class="min-h-screen flex flex-col">
 
-    <nav class="fixed pin-x pin-t border-b border-grey-lighter p-4">
+  <div id="app" class="min-h-screen flex flex-col pt-12">
+
+    <nav class="fixed pin-x pin-t z-10 leading-none bg-white border-b border-grey-lighter p-4">
       <div class="absolute pin-y pin-l p-4">
         S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
       </div>
@@ -15,11 +16,10 @@
       </div>
     </nav>
 
-    <div class="flex-auto flex items-center justify-center">
-      <router-view />
-    </div>
+    <router-view />
 
   </div>
+
 </template>
 
 <script>
@@ -41,10 +41,10 @@ export default {
   @apply .font-plex-sans .antialiased .text-black;
 }
 nav .router-link-exact-active a {
-  @apply .text-transparent;
+  @apply .text-transparent .cursor-default;
 }
 nav .router-link-exact-active a:hover {
-  @apply .bg-transparent;
+  @apply .bg-transparent .cursor-default;
 }
 .router-view {
   animation: 0.6s fade-in;
@@ -53,7 +53,8 @@ a {
   @apply .text-inherit .no-underline;
 }
 a,
-button {
+button,
+.transition {
   transition: 0.2s ease-out;
 }
 

@@ -4,15 +4,18 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: require('./views/Home.vue').default
+    component: require('./views/Home.vue').default,
+    props: true
   },
   {
-    path: '/:id',
+    path: '/project/:uid',
     name: 'Project',
-    component: require('./views/Project.vue').default
+    component: require('./views/Project.vue').default,
+    props: true
   }
 ];
 
 export default new Router({
-  routes
+  routes,
+  mode: 'history'
 });
