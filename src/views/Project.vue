@@ -1,6 +1,6 @@
 <template>
   <div v-if="project" class="router-view">
-    <h1 class="inline-block font-bold text-3xl sm:text-5xl border-b-4 border-teal-lighter mt-12 mb-4">{{ projectTitle }}</h1>
+    <h1 class="inline-block font-bold text-4xl sm:text-5xl border-b-4 border-teal mt-12 mb-4">{{ projectTitle }}</h1>
     <span class="block text-grey-dark uppercase mb-8">{{ projectDate }}</span>
     <div class="mb-12">
       <p>{{ projectDescription }}</p>

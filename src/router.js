@@ -15,7 +15,7 @@ const routes = [
   },
   {
     path: '/*',
-    name: 'Missing Page',
+    name: 'MissingPage',
     component: require('./views/404.vue').default
   }
 ];
