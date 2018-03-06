@@ -1,11 +1,18 @@
 <template>
   <div v-if="project" class="router-view">
-    <h1 class="inline-block font-bold text-4xl sm:text-5xl border-b-4 border-teal mt-12 mb-4">{{ projectTitle }}</h1>
-    <span class="block text-grey-dark uppercase mb-8">{{ projectDate }}</span>
+    <h1>{{ projectTitle }}</h1>
+    <span class="block font-bold text-grey-dark uppercase -mt-4 mb-8">{{ projectDate }}</span>
     <div class="mb-12">
       <p>{{ projectDescription }}</p>
     </div>
-    <img :src="projectPreview" alt="">
+    <div class="flex -mx-2 md:-mx-8">
+      <div class="mx-2">
+        <img :src="projectPreviewDesktop" :alt="projectTitle + ' desktop preview'" class="rounded-sm">
+      </div>
+      <div class="mx-2">
+        <img :src="projectPreviewMobile" :alt="projectTitle + ' mobile preview'" class="rounded-sm">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -31,8 +38,11 @@ export default {
     projectDescription: function() {
       return this.project[0].data.description[0].text;
     },
-    projectPreview: function() {
-      return this.project[0].data.preview.url;
+    projectPreviewDesktop: function() {
+      return this.project[0].data.preview_desktop.url;
+    },
+    projectPreviewMobile: function() {
+      return this.project[0].data.preview_mobile.url;
     }
   },
   methods: {

@@ -1,6 +1,6 @@
 <template>
 
-  <div id="app" class="px-4 py-12">
+  <div id="app" class="px-4 py-8 md:py-12">
 
     <nav class="fixed pin-x pin-t z-10 leading-none bg-white border-b-2 border-grey-lighter py-4 mx-4">
       <div class="absolute pin-y pin-l py-4">
@@ -73,22 +73,27 @@ nav .router-link-exact-active a {
 .router-view {
   animation: 1.2s fade-in;
 }
+
 a {
   @apply .text-inherit .no-underline;
-}
-.inline-link {
-  @apply .text-black .border-b-2 .border-grey-light;
-}
-.inline-link:hover {
-  @apply .border-teal;
 }
 a,
 button,
 .transition {
   transition: 0.15s ease-out;
 }
+h1 {
+  @apply .inline-block .font-bold .text-4xl .border-b-4 .border-teal .mt-12 .mb-8;
+}
 p {
-  @apply .leading-normal .text-grey-darkest .mb-4;
+  @apply .text-lg .leading-normal .text-grey-darkest .mb-4;
+}
+
+.inline-link {
+  @apply .text-black .border-b-2 .border-grey-light;
+}
+.inline-link:hover {
+  @apply .border-teal;
 }
 
 @keyframes fade-in {
