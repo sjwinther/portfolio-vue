@@ -8,6 +8,8 @@
 * [x] Go ahead and figure out that vue-router
 * [x] Get Prismic up and running
 * [ ] Actually build the site
+* [ ] [Add some transitions](https://vuejs.org/v2/guide/transitions.html)
+* [ ] Add: WWLFDMD, Initiativet.dk, Merittian, (NORD.app)
 * [ ] Kill useless CSS
 * [ ] Meta tags blargh
 * [x] 404 handling

@@ -1,24 +1,22 @@
 <template>
 
-  <div id="app" class="px-4 py-8 md:py-12">
+  <div id="app" class="max-w-lg mx-auto px-4 py-16 md:py-20">
 
-    <nav class="fixed pin-x pin-t z-10 leading-none bg-white border-b-2 border-grey-lighter py-4 mx-4">
-      <div class="absolute pin-y pin-l py-4">
+    <nav class="absolute pin-x pin-t">
+      <div class="absolute pin-y pin-l text-grey-dark p-4 my-1">
         S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
       </div>
-      <ul class="text-center list-reset">
-        <router-link to="/" tag="li" class="inline-block text-black">
-          <a class="group font-bold m-2 hover:mr-3"><span class="text-teal transition mr-1 group-hover:mr-2">←</span>Home</a>
+      <div class="fixed pin-x pin-t text-center">
+        <router-link to="/" class="group inline-block font-bold text-black bg-white rounded-sm shadow p-3 hover:pl-2 my-2">
+          <span class="text-teal transition mr-1 group-hover:mr-2">←</span>Home
         </router-link>
-      </ul>
-      <div class="hidden sm:block absolute pin-y pin-r py-4">
+      </div>
+      <div class="hidden sm:block absolute pin-y pin-r text-grey-dark p-4 my-1">
         Digital Designer
       </div>
     </nav>
 
-    <div class="max-w-md mx-auto">
-      <router-view :projects="projects"/>
-    </div>
+    <router-view :projects="projects"/>
 
   </div>
 
@@ -64,29 +62,36 @@ export default {
 @tailwind utilities;
 
 #app {
-  animation: 1.2s fade-in;
-  @apply .font-plex-sans .antialiased .text-black;
+  animation: 0.8s fade-in;
+  @apply .font-plex-sans .leading-none .text-lg .text-black .antialiased;
 }
-nav .router-link-exact-active a {
+nav .router-link-exact-active {
   @apply .opacity-0 .cursor-default;
 }
 .router-view {
-  animation: 1.2s fade-in;
+  animation: 0.2s fade-in;
 }
 
+html {
+  @apply .bg-grey-lighter;
+}
 a {
   @apply .text-inherit .no-underline;
 }
+h1 {
+  @apply .inline-block .text-4xl .mb-8;
+}
+p {
+  @apply .leading-normal .text-grey-darkest .max-w-md .mb-4;
+}
+li {
+  @apply .leading-normal;
+}
+
 a,
 button,
 .transition {
   transition: 0.15s ease-out;
-}
-h1 {
-  @apply .inline-block .font-bold .text-4xl .border-b-4 .border-teal .mt-12 .mb-8;
-}
-p {
-  @apply .text-lg .leading-normal .text-grey-darkest .mb-4;
 }
 
 .inline-link {
