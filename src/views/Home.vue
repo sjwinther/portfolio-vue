@@ -13,21 +13,44 @@
       </p>
       <p>Do you want to get in touch? <span class="font-bold text-teal mr-1">→</span><a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="inline-link font-bold">Write me an email</a>.</p>
     </div>
-    <h2 class="font-normal text-grey-darker text-2xl my-4">Projects</h2>
-    <ul class="list-reset flex flex-wrap">
-      <router-link v-for="project in projects" :to="'/project/' + project.uid" :key="project.index" tag="li" class="w-full sm:w-1/2 md:w-1/3 my-2">
-        <a class="group inline-block font-bold bg-white rounded-sm shadow px-4 py-2 hover:pr-3">
-          {{ project.data.title }}
-          <span class="text-teal transition ml-1 group-hover:ml-2">→</span>
-        </a>
-      </router-link>
-    </ul>
+    <div>
+      <h2 class="font-normal text-grey-darker text-2xl mb-4">Projects</h2>
+      <ul class="list-reset flex flex-wrap">
+        <router-link v-for="(project, index) in projects" :to="'/project/' + project.uid" :key="index" tag="li" class="w-full sm:w-1/2 md:w-1/3 my-2">
+          <a :class="'group inline-block font-bold hover:text-white bg-white rounded-sm shadow px-6 py-2 hover:pr-5 hover:bg-' + aColor(index)">
+            {{ project.data.title }}
+            <span class="text-teal group-hover:text-white transition ml-1 group-hover:ml-2">→</span>
+          </a>
+        </router-link>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['projects']
+  props: ['projects'],
+  data() {
+    return {
+      colors: ['yellow-dark', 'blue-light', 'indigo', 'green', 'orange', 'pink']
+    };
+  },
+  methods: {
+    aColor(i) {
+      return this.colors[i];
+    },
+    shuffleArray(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+  },
+  beforeMount() {
+    this.shuffleArray(this.colors);
+  }
 };
 </script>
 

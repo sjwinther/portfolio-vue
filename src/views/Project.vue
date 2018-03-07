@@ -19,8 +19,13 @@
 export default {
   props: ['uid'],
   name: 'Project',
-  metaInfo: {
-    title: 'Project'
+  metaInfo() {
+    if (this.project.length > 0) {
+      return {
+        title: this.projectTitle
+      };
+    }
+    return { title: '' };
   },
   data() {
     return {
@@ -32,7 +37,22 @@ export default {
       return this.project[0].data.title;
     },
     projectDate: function() {
-      return this.project[0].data.date;
+      const date = this.project[0].data.date;
+      const year = date.substring(2, 4);
+      const month = date.substring(5, 7);
+      let season = '';
+      if (month < 3) {
+        season = 'Winter';
+      } else if (month == 12) {
+        season = 'Winter';
+      } else if (month < 6 && month > 2) {
+        season = 'Spring';
+      } else if (month < 9 && month > 5) {
+        season = 'Summer';
+      } else if (month < 12 && month > 8) {
+        season = 'Autumn';
+      }
+      return season + " '" + year;
     },
     projectDescription: function() {
       const PrismicDOM = require('prismic-dom');
@@ -44,7 +64,9 @@ export default {
 
       const htmlSerializer = function(element, content) {
         if (element.type == 'hyperlink') {
-          return '<a href="' + element.url + '" target="_blank" rel="noopener" class="inline-link">' + content + '</a>';
+          return (
+            '<a href="' + element.data.url + '" target="_blank" rel="noopener" class="inline-link">' + content + '</a>'
+          );
         }
         return null;
       };

@@ -1,6 +1,7 @@
 <template>
 
-  <div id="app" class="max-w-lg bg-grey-lighter px-4 mx-auto">
+  <div id="app" class="min-h-full flex flex-col max-w-lg bg-grey-lighter px-4 mx-auto">
+
     <nav class="flex text-grey-dark border-b-2 border-grey-light py-2">
       <div class="flex-auto py-3">
         S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
@@ -15,10 +16,16 @@
       </div>
     </nav>
 
-    <div class="py-12">
+    <main class="flex-auto py-12">
       <router-view :projects="projects"/>
-    </div>
+    </main>
+
+    <footer class="text-center border-t-2 border-grey-light py-5">
+      <a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="text-grey-dark">sebastianwinther@gmail.com</a>
+    </footer>
+
   </div>
+
 </template>
 
 <script>
@@ -71,6 +78,10 @@ nav .router-link-exact-active {
   animation: 0.2s fade-in;
 }
 
+html,
+body {
+  @apply .h-full;
+}
 html {
   @apply .bg-grey-lighter;
 }
