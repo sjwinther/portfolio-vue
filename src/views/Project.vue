@@ -2,8 +2,7 @@
   <div v-if="project" class="router-view">
     <h1>{{ projectTitle }}</h1>
     <span class="block uppercase font-bold text-grey-dark -mt-4 mb-8">{{ projectDate }}</span>
-    <div class="mb-12">
-      <p>{{ projectDescription }}</p>
+    <div v-html="projectDescription" class="mb-12">
     </div>
     <div class="flex -mx-2 lg:-mx-12">
       <div class="mx-2">
@@ -25,8 +24,7 @@ export default {
   },
   data() {
     return {
-      project: '',
-      richProjectDescription: ''
+      project: ''
     };
   },
   computed: {
