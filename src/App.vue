@@ -1,9 +1,8 @@
 <template>
 
-  <div id="app" class="max-w-lg mx-auto px-4 py-16 md:py-20">
-
-    <nav class="absolute pin-x pin-t">
-      <div class="absolute pin-y pin-l text-grey-dark p-4 my-1">
+  <div id="app" class="max-w-lg bg-grey-lighter px-4 mx-auto">
+    <nav class="flex text-grey-dark border-b-2 border-grey-light py-2">
+      <div class="flex-auto py-3">
         S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
       </div>
       <div class="fixed pin-x pin-t text-center">
@@ -11,15 +10,15 @@
           <span class="text-teal transition mr-1 group-hover:mr-2">←</span>Home
         </router-link>
       </div>
-      <div class="hidden sm:block absolute pin-y pin-r text-grey-dark p-4 my-1">
+      <div class="hidden sm:block py-3">
         Digital Designer
       </div>
     </nav>
 
-    <router-view :projects="projects"/>
-
+    <div class="py-12">
+      <router-view :projects="projects"/>
+    </div>
   </div>
-
 </template>
 
 <script>

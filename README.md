@@ -14,3 +14,4 @@
 * [ ] Meta tags blargh
 * [x] 404 handling
 * [ ] Make a build script to gh-pages branch
+* [ ] Have it change colors according to sun up/down
