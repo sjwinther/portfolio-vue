@@ -16,4 +16,5 @@
 * [ ] Meta descriptions + tags + twitter + blargh blargh
 * [x] 404 handling
 * [ ] Make a build script to gh-pages branch
-* [ ] Have it change colors according to sun up/down
+* [ ] Have it change colors according to sun up/down (CSS variables could do the trick?)
+* [ ] [Vue loop](https://github.com/JosephSmith127/vue-loop)

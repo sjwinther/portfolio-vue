@@ -1,5 +1,5 @@
 <template>
-  <div v-if="project" class="router-view">
+  <div v-if="project" class="fade-in">
     <h1>{{ projectTitle }}</h1>
     <span class="block uppercase font-bold text-grey-dark -mt-4 mb-8">{{ projectDate }}</span>
     <div v-html="projectDescription" class="mb-12">

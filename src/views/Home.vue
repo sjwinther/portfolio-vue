@@ -1,5 +1,5 @@
 <template>
-  <div class="router-view">
+  <div class="fade-in">
     <div class="mb-8">
       <h1>Hi, I'm Sebastian</h1>
       <p>I'm a 24-year old student at the Digital Design and Communication MSc programme at the IT-University of Copenhagen.
@@ -13,7 +13,7 @@
       </p>
       <p>Do you want to get in touch? <span class="font-bold text-teal mr-1">→</span><a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="inline-link font-bold">Write me an email</a>.</p>
     </div>
-    <div>
+    <div v-if="projects" class="fade-in">
       <h2 class="font-normal text-grey-darker text-2xl mb-4">Projects</h2>
       <ul class="list-reset flex flex-wrap">
         <router-link v-for="(project, index) in projects" :to="'/project/' + project.uid" :key="index" tag="li" class="w-full sm:w-1/2 md:w-1/3 my-2">

@@ -74,8 +74,8 @@ export default {
 nav .router-link-exact-active {
   @apply .opacity-0 .cursor-default;
 }
-.router-view {
-  animation: 0.2s fade-in;
+.fade-in {
+  animation: 0.4s fade-in;
 }
 
 html,
