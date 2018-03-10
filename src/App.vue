@@ -45,7 +45,7 @@ export default {
       const Prismic = require('prismic-javascript');
       Prismic.getApi('https://sebastianwinther.prismic.io/api/v2')
         .then(function(api) {
-          return api.query(Prismic.Predicates.at('document.type', 'project'));
+          return api.query(Prismic.Predicates.at('document.type', 'project'), { orderings: '[my.project.date desc]' });
         })
         .then(
           response => {

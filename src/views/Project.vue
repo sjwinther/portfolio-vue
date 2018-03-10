@@ -17,40 +17,47 @@
 
 <script>
 export default {
-  props: ['uid'],
+  props: ['projects', 'uid'],
   name: 'Project',
   metaInfo() {
-    if (this.project.length > 0) {
+    if (this.project) {
       return {
         title: this.projectTitle
       };
     }
     return { title: '' };
   },
-  data() {
-    return {
-      project: ''
-    };
-  },
   computed: {
+    project: function() {
+      const uid = this.uid;
+      function theProject(project) {
+        return project.uid === uid;
+      }
+      if (this.projects) {
+        return this.projects.find(theProject);
+      }
+      return null;
+    },
     projectTitle: function() {
-      return this.project[0].data.title;
+      return this.project.data.title;
     },
     projectDate: function() {
-      const date = this.project[0].data.date;
-      const year = date.substring(2, 4);
+      const date = this.project.data.date;
       const month = date.substring(5, 7);
+      let year = date.substring(2, 4);
       let season = '';
       if (month < 3) {
         season = 'Winter';
+        year = --year + '/' + ++year;
       } else if (month == 12) {
         season = 'Winter';
+        year = year + '/' + ++year;
       } else if (month < 6 && month > 2) {
         season = 'Spring';
       } else if (month < 9 && month > 5) {
         season = 'Summer';
       } else if (month < 12 && month > 8) {
-        season = 'Autumn';
+        season = 'Fall';
       }
       return season + " '" + year;
     },
@@ -71,40 +78,14 @@ export default {
         return null;
       };
 
-      return PrismicDOM.RichText.asHtml(this.project[0].data.description, linkResolver, htmlSerializer);
+      return PrismicDOM.RichText.asHtml(this.project.data.description, linkResolver, htmlSerializer);
     },
     projectPreviewDesktop: function() {
-      return this.project[0].data.preview_desktop.url;
+      return this.project.data.preview_desktop.url;
     },
     projectPreviewMobile: function() {
-      return this.project[0].data.preview_mobile.url;
+      return this.project.data.preview_mobile.url;
     }
-  },
-  methods: {
-    getContent() {
-      const uid = this.uid;
-      const Prismic = require('prismic-javascript');
-
-      Prismic.getApi('https://sebastianwinther.prismic.io/api/v2')
-        .then(function(api) {
-          return api.query(Prismic.Predicates.at('my.project.uid', uid));
-        })
-        .then(
-          response => {
-            if (response.results.length > 0) {
-              this.project = response.results;
-            } else {
-              return this.$router.push('/404');
-            }
-          },
-          function(err) {
-            console.log('Something went wrong: ', err);
-          }
-        );
-    }
-  },
-  beforeMount() {
-    this.getContent();
   }
 };
 </script>

@@ -3,15 +3,14 @@
     <div class="mb-8">
       <h1>Hi, I'm Sebastian</h1>
       <p>I'm a 24-year old student at the Digital Design and Communication MSc programme at the IT-University of Copenhagen.
-        I like art, design, typography, music and the occasional beer or five.
-        Oh, and I co-founded a political party in Denmark called <a href="https://initiativet.dk" target="_blank" class="inline-link">Initiativet</a>.</p>
+        I like art, design, typography, music and the occasional beer or five,
+        and I co-founded a political party in Denmark called <a href="https://initiativet.dk" target="_blank" class="inline-link">Initiativet</a>.</p>
       <p>Welcome to my portfolio. It's a work in progress being built with
         <a href="https://vuejs.org/" target="_blank" rel="noopener" class="inline-link">Vue.js</a>,
-        <a href="https://prismic.io/" target="_blank" rel="noopener" class="inline-link">Prismic CMS</a>,
-        <a href="https://tailwindcss.com/" target="_blank" rel="noopener" class="inline-link">Tailwind CSS</a>
-        and set in <a href="https://github.com/IBM/plex" target="_blank" rel="noopener" class="inline-link">IBM Plex</a>.
+        <a href="https://prismic.io/" target="_blank" rel="noopener" class="inline-link">Prismic CMS</a> &
+        <a href="https://tailwindcss.com/" target="_blank" rel="noopener" class="inline-link">Tailwind CSS</a>.
       </p>
-      <p>Do you want to get in touch? <span class="font-bold text-teal mr-1">→</span><a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="inline-link font-bold">Write me an email</a>.</p>
+      <p>Do you want to talk about a project? <span class="font-bold text-teal mr-1">→</span><a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="inline-link font-bold">Write me an email</a>.</p>
     </div>
     <div v-if="projects" class="fade-in">
       <h2 class="font-normal text-grey-darker text-2xl mb-4">Projects</h2>
