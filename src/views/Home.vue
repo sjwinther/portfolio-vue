@@ -16,9 +16,9 @@
       <h2 class="font-normal text-grey-darker text-2xl mb-4">Projects</h2>
       <ul class="list-reset flex flex-wrap">
         <router-link v-for="(project, index) in projects" :to="'/project/' + project.uid" :key="index" tag="li" class="w-full sm:w-1/2 md:w-1/3 my-2">
-          <a :class="'group inline-block font-bold hover:text-white bg-white rounded-sm shadow px-6 py-2 hover:pr-5 hover:bg-' + aColor(index)">
+          <a :class="'group inline-block font-bold hover:text-white bg-white rounded-sm shadow px-6 py-2 hover:bg-' + aColor(index)">
             {{ project.data.title }}
-            <span class="text-teal group-hover:text-white transition ml-1 group-hover:ml-2">→</span>
+            <span class="inline-block text-teal group-hover:text-white transition ml-1 group-hover:translate-1">→</span>
           </a>
         </router-link>
       </ul>

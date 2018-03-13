@@ -12,6 +12,7 @@
 * [ ] Add: WWLFDMD, Initiativet.dk, Merittian, (NORD.app)
 * [ ] What's up with the random colors?
 * [ ] Better contact info? Resume?
+* [ ] Better font loading
 * [ ] Kill useless CSS
 * [ ] Meta descriptions + tags + twitter + blargh blargh
 * [x] 404 handling

@@ -7,8 +7,8 @@
         S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
       </div>
       <div class="fixed pin-x pin-t text-center">
-        <router-link to="/" class="group inline-block font-bold text-black bg-white rounded-sm shadow p-3 hover:pl-2 my-2">
-          <span class="text-teal transition mr-1 group-hover:mr-2">←</span>Home
+        <router-link to="/" class="group inline-block font-bold text-black bg-white rounded-sm shadow p-3 my-2">
+          <span class="inline-block text-teal transition mr-1 group-hover:translate--1">←</span>Home
         </router-link>
       </div>
       <div class="hidden sm:block py-3">
@@ -109,6 +109,15 @@ button,
 }
 .inline-link:hover {
   @apply .border-teal;
+}
+
+@variants group-hover {
+  .translate-1 {
+    transform: translateX(0.25rem);
+  }
+  .translate--1 {
+    transform: translateX(-0.25rem);
+  }
 }
 
 @keyframes fade-in {
