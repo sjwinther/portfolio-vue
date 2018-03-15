@@ -10,15 +10,14 @@
         <a href="https://prismic.io/" target="_blank" rel="noopener" class="inline-link">Prismic CMS</a> &
         <a href="https://tailwindcss.com/" target="_blank" rel="noopener" class="inline-link">Tailwind CSS</a>.
       </p>
-      <p>Do you want to talk about a project? <span class="font-bold text-teal mr-1">→</span><a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="inline-link font-bold">Write me an email</a>.</p>
+      <p>Do you want to talk about a project? <span class="font-semibold text-teal mr-1">→</span><a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="inline-link font-bold">Write me an email</a>.</p>
     </div>
     <div v-if="projects" class="fade-in">
       <h2 class="font-normal text-grey-darker text-2xl mb-4">Projects</h2>
       <ul class="list-reset flex flex-wrap">
         <router-link v-for="(project, index) in projects" :to="'/project/' + project.uid" :key="index" tag="li" class="w-full sm:w-1/2 md:w-1/3 my-2">
           <a :class="'group inline-block font-bold hover:text-white bg-white rounded-sm shadow px-6 py-2 hover:bg-' + aColor(index)">
-            {{ project.data.title }}
-            <span class="inline-block text-teal group-hover:text-white transition ml-1 group-hover:translate-1">→</span>
+            {{ project.data.title }}<span class="inline-block text-teal group-hover:text-white transition ml-2 group-hover:translate-1">→</span>
           </a>
         </router-link>
       </ul>

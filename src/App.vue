@@ -8,7 +8,7 @@
       </div>
       <div class="fixed pin-x pin-t text-center">
         <router-link to="/" class="group inline-block font-bold text-black bg-white rounded-sm shadow p-3 my-2">
-          <span class="inline-block text-teal transition mr-1 group-hover:translate--1">←</span>Home
+          <span class="inline-block text-teal transition mr-2 group-hover:translate--1">←</span>Home
         </router-link>
       </div>
       <div class="hidden sm:block py-3">
@@ -87,6 +87,14 @@ html {
 }
 a {
   @apply .text-inherit .no-underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-semibold;
 }
 h1 {
   @apply .inline-block .text-4xl .mb-8;
