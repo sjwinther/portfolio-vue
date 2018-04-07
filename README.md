@@ -1,6 +1,6 @@
 # portfolio-vue
 
-> Personal portfolio project
+> Personal portfolio project built using [vue-cli's webpack-simple config](https://github.com/vuejs-templates/webpack-simple)
 
 * [x] vue-cli --> webpack-simple go
 * [x] Get Tailwind up and running
@@ -18,5 +18,6 @@
 * [x] 404 handling
 * [ ] Favicon
 * [ ] Make a build script to gh-pages branch
+* [ ] Change routing no non-hash
 * [ ] Have it change colors according to sun up/down (CSS variables could do the trick?)
 * [ ] [Vue loop](https://github.com/JosephSmith127/vue-loop)
