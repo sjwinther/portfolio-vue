@@ -8,6 +8,7 @@
 * [x] Go ahead and figure out that vue-router
 * [x] Get Prismic up and running
 * [x] Actually build the site
+* [ ] Change strategy: [VuePress](https://vuepress.vuejs.org/) > Prismic
 * [ ] [Add some transitions](https://vuejs.org/v2/guide/transitions.html)
 * [ ] Add: WWLFDMD, Initiativet.dk, Merittian, (NORD.app)
 * [ ] What's up with the random colors?
