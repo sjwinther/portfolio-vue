@@ -1,9 +1,8 @@
 <template>
   <div v-if="project" class="fade-in">
     <h1>{{ projectTitle }}</h1>
-    <span class="block uppercase font-bold text-grey-dark -mt-4 mb-8">{{ projectDate }}</span>
-    <div v-html="projectDescription" class="mb-12">
-    </div>
+    <span class="block uppercase font-bold text-grey-dark mb-8">{{ projectDate }}</span>
+    <div v-html="projectDescription" class="mb-12"></div>
     <div class="flex -mx-2 lg:-mx-12">
       <div class="mx-2">
         <img :src="projectPreviewDesktop" :alt="projectTitle + ' desktop preview'" class="rounded-sm shadow">

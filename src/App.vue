@@ -1,14 +1,14 @@
 <template>
 
-  <div id="app" class="min-h-full flex flex-col max-w-lg bg-grey-lighter px-4 mx-auto">
+  <div id="app" class="min-h-full flex flex-col max-w-lg px-4 mx-auto">
 
-    <nav class="flex text-grey-dark border-b-2 border-grey-light py-2">
+    <nav class="flex text-lg text-grey-dark border-b-2 border-grey-light py-2">
       <div class="flex-auto py-3">
         S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
       </div>
       <div class="fixed pin-x pin-t text-center">
-        <router-link to="/" class="group inline-block font-bold text-black bg-white rounded-sm shadow p-3 my-2">
-          <span class="inline-block text-teal transition mr-2 group-hover:translate--1">←</span>Home
+        <router-link to="/" class="group inline-block font-bold text-black bg-white rounded-sm shadow hover:shadow-lg p-3 my-2">
+          <span class="inline-block text-teal transition mr-2 group-hover:translate-x--1">←</span>Home
         </router-link>
       </div>
       <div class="hidden sm:block py-3">
@@ -20,8 +20,12 @@
       <router-view :projects="projects"/>
     </main>
 
-    <footer class="text-center border-t-2 border-grey-light py-5">
-      <a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="text-grey-dark">sebastianwinther@gmail.com</a>
+    <footer class="text-center border-t-2 border-grey-light py-6">
+      <p class="text-sm text-grey-dark mx-auto my-0">Built with
+        <a href="https://vuejs.org/" target="_blank" rel="noopener" class="inline-link">Vue.js</a>,
+        <a href="https://prismic.io/" target="_blank" rel="noopener" class="inline-link">Prismic CMS</a> &
+        <a href="https://tailwindcss.com/" target="_blank" rel="noopener" class="inline-link">Tailwind CSS</a>.
+      </p>
     </footer>
 
   </div>
@@ -69,7 +73,6 @@ export default {
 
 #app {
   animation: 0.8s fade-in;
-  @apply .font-plex-sans .leading-none .text-lg .text-black .antialiased;
 }
 nav .router-link-exact-active {
   @apply .opacity-0 .cursor-default;
@@ -83,7 +86,7 @@ body {
   @apply .h-full;
 }
 html {
-  @apply .bg-grey-lighter;
+  @apply .font-plex-sans .leading-none .tracking-wide .text-black .bg-grey-lighter .antialiased;
 }
 a {
   @apply .text-inherit .no-underline;
@@ -97,13 +100,10 @@ h6 {
   @apply font-semibold;
 }
 h1 {
-  @apply .inline-block .text-4xl .mb-8;
+  @apply .text-3xl .mb-4;
 }
 p {
   @apply .leading-normal .text-grey-darkest .max-w-md .mb-4;
-}
-li {
-  @apply .leading-normal;
 }
 
 a,
@@ -113,17 +113,17 @@ button,
 }
 
 .inline-link {
-  @apply .text-black .border-b-2 .border-grey-light;
+  @apply .border-b-2 .border-grey-light;
 }
 .inline-link:hover {
   @apply .border-teal;
 }
 
 @variants group-hover {
-  .translate-1 {
+  .translate-x-1 {
     transform: translateX(0.25rem);
   }
-  .translate--1 {
+  .translate-x--1 {
     transform: translateX(-0.25rem);
   }
 }
