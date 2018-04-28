@@ -119,9 +119,15 @@ button,
   @apply .border-teal;
 }
 
+@variants hover {
+  .translate-y--1 {
+    transform: translateY(-0.25rem);
+  }
+}
+
 @variants group-hover {
-  .translate-x-1 {
-    transform: translateX(0.25rem);
+  .translate-x-2 {
+    transform: translateX(0.5rem);
   }
   .translate-x--1 {
     transform: translateX(-0.25rem);

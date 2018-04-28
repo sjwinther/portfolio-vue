@@ -8,14 +8,14 @@
 * [x] Go ahead and figure out that vue-router
 * [x] Get Prismic up and running
 * [x] Actually build the site
-* [ ] Add: WWLFDMD, Initiativet.dk, Merittian, (NORD.app)
-* [ ] Better contact info? Resume?
+* [ ] Add: App.initiativet.dk, Initiativet.dk, Merittian, NORD.app
 * [ ] [Add some transitions](https://vuejs.org/v2/guide/transitions.html)
 * [ ] Kill useless CSS
 * [ ] Meta descriptions + tags + twitter + blargh blargh
 * [ ] 404 handling (including project/404)
 * [ ] Favicon
+* [ ] Change routing no non-hash? (or prerender?)
 * [ ] Make a build script to gh-pages branch
-* [ ] Change routing no non-hash?
+* [ ] Add a printable resume-page
 * [ ] Have it change colors according to sun up/down (CSS variables could do the trick?)
 * [ ] [Vue loop](https://github.com/JosephSmith127/vue-loop)
