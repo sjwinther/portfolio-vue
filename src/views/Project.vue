@@ -1,14 +1,14 @@
 <template>
   <div v-if="project" class="fade-in">
     <h1>{{ projectTitle }}</h1>
-    <span class="block uppercase font-bold text-grey-dark mb-8">{{ projectDate }}</span>
+    <span class="block uppercase mb-8">{{ projectDate }}</span>
     <div v-html="projectDescription" class="mb-12"></div>
     <div class="flex -mx-2 lg:-mx-12">
       <div class="mx-2">
-        <img :src="projectPreviewDesktop" :alt="projectTitle + ' desktop preview'" class="rounded-sm shadow">
+        <img :src="projectPreviewDesktop" :alt="projectTitle + ' desktop preview'" class="border border-solid border-grey-light">
       </div>
       <div class="mx-2">
-        <img :src="projectPreviewMobile" :alt="projectTitle + ' mobile preview'" class="rounded-sm shadow">
+        <img :src="projectPreviewMobile" :alt="projectTitle + ' mobile preview'" class="border border-solid border-grey-light">
       </div>
     </div>
   </div>

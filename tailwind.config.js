@@ -101,7 +101,8 @@ let colors = {
   'blue-darkest': '#12283a',
   'blue-darker': '#1c3d5a',
   'blue-dark': '#2779bd',
-  blue: '#3490dc',
+  // blue: '#3490dc',
+  blue: 'blue',
   'blue-light': '#6cb2eb',
   'blue-lighter': '#bcdefa',
   'blue-lightest': '#eff8ff',
@@ -700,7 +701,7 @@ module.exports = {
 
   shadows: {
     default: '0 2px 4px 0 rgba(0,0,0,0.15)',
-    lg: '0 4px 12px 0 rgba(0,0,0,0.1)'
+    lg: '0 4px 16px 2px rgba(0,0,0,0.05)'
   },
 
   /*
