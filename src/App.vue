@@ -7,7 +7,7 @@
         S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
       </div>
       <div class="fixed pin-x pin-t text-center">
-        <router-link to="/" class="group inline-block font-bold bg-white border border-grey-light p-3 my-2">
+        <router-link to="/" class="group inline-block bg-white border border-grey-light p-3 my-2">
           <span class="inline-block text-blue transition mr-2 group-hover:translate-x--1">←</span>Home
         </router-link>
       </div>
@@ -81,6 +81,10 @@ nav .router-link-exact-active {
   animation: 0.4s fade-in;
 }
 
+::selection {
+  color: white;
+  background: blue;
+}
 html,
 body {
   @apply .h-full;
@@ -91,16 +95,8 @@ html {
 a {
   @apply .text-inherit .no-underline;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-semibold;
-}
 h1 {
-  @apply .text-3xl .mb-4;
+  @apply .font-pt-serif .text-3xl .mb-4;
 }
 p {
   @apply .leading-normal .max-w-md .mb-4;

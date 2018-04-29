@@ -208,7 +208,7 @@ module.exports = {
       'Helvetica Neue',
       'sans-serif'
     ],
-    'plex-mono': ['IBM Plex Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+    'pt-serif': ['PT Serif', 'Georgia', 'serif'],
     sans: [
       'system-ui',
       'BlinkMacSystemFont',
