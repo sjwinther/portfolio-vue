@@ -96,10 +96,10 @@ a {
   @apply .text-inherit .no-underline;
 }
 h1 {
-  @apply .font-pt-serif .text-3xl .mb-4;
+  @apply .font-pt-serif .text-3xl .mb-8;
 }
 p {
-  @apply .leading-normal .max-w-md .mb-4;
+  @apply .text-xl .leading-normal .max-w-lg .mb-4;
 }
 
 a,

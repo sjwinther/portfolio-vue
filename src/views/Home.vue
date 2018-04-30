@@ -1,13 +1,12 @@
 <template>
   <div class="fade-in">
-    <div class="mb-12">
+    <div class="py-12">
       <h1>Hi, I'm Sebastian</h1>
-      <p>I'm student at the Digital Design and Communication MSc programme at the IT-University of Copenhagen. I like designing digital interfaces and working with user experiences, but most of all I'm motivated by building stuff and learning from it.
-        I also co-founded a political party in Denmark called <a href="https://initiativet.dk" target="_blank" class="inline-link">Initiativet</a>.</p>
-      <p>Do you want to get in touch? <span class="text-blue mr-1">→</span><a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="inline-link">Write me an email</a>.</p>
+      <p class="mb-12">I'm a student at the Digital Design and Communication MSc programme at the IT-University of Copenhagen. I like designing digital interfaces and working with user experiences, but most of all I'm motivated by building stuff and learning from it.</p>
+      <p>Do you want to get in touch? <a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="inline-block inline-link"><span class="mr-1">→</span>Write me an email</a>.</p>
     </div>
-    <div v-if="projects" class="fade-in">
-      <h2 class="font-normal text-xl mb-4">Projects ↓</h2>
+    <div v-if="projects" class="fade-in py-12">
+      <h2 class="font-normal text-xl mb-4">Selected projects ↓</h2>
       <ul class="grid list-reset lg:-mx-12 -mt-8">
         <li class="grid-item"></li>
         <router-link v-for="(project, index) in projects" :to="'/project/' + project.uid" :key="index" tag="li" class="grid-item">
@@ -16,7 +15,7 @@
               <h3 class="font-pt-serif text-2xl text-white">{{ project.data.title }}</h3>
             </div>
             <span class="relative block text-lg group-hover:text-blue bg-white border border-grey-light transition px-6 py-3">
-            Let's go<span class="absolute pin-r text-blue transition  group-hover:translate-x-2 mr-6">→</span>
+            iOS app<span class="absolute pin-r text-blue transition  group-hover:translate-x-2 mr-6">→</span>
             </span>
           </a>
         </router-link>
