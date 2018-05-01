@@ -3,7 +3,7 @@
     <div class="py-12">
       <h1>Hi, I'm Sebastian</h1>
       <p class="mb-12">I'm a student at the Digital Design and Communication MSc programme at the IT-University of Copenhagen. I enjoy designing digital interfaces and working with user experiences. Most of all I'm motivated by building stuff and learning from it.</p>
-      <p>Do you want to get in touch? <a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="inline-block inline-link"><span class="mr-1">→</span>Write me an email</a>.</p>
+      <p>I'm available for work. Do you want to get in touch? <a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="inline-block inline-link"><span class="mr-1">→</span>Write me an email</a>.</p>
     </div>
     <div v-if="projects" class="fade-in py-12">
       <h2 class="font-normal text-xl mb-4">Selected projects ↓</h2>
@@ -12,7 +12,7 @@
         <router-link v-for="(project, index) in projects" :to="'/project/' + project.uid" :key="index" tag="li" class="grid-item">
           <a class="group h-full flex flex-col justify-end overflow-hidden border border-black hover:translate-y--1">
             <div :style="'background-color: ' + project.data.color" class="flex-grow flex items-center justify-center">
-              <img :src="project.data.preview_home.url" :alt="project.data.title" class="w-64">
+              <img :src="project.data.preview.url" :alt="project.data.title" class="w-64">
             </div>
             <span class="relative block text-lg bg-white transition border-t border-black px-6 py-3">
             {{ project.data.type }}<span class="absolute pin-r text-blue transition group-hover:translate-x-2 mr-6">→</span>

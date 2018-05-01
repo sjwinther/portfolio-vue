@@ -3,16 +3,8 @@
     <h1>{{ projectTitle }}</h1>
     <span class="block text-lg uppercase -mt-2 mb-8">{{ projectDate }}</span>
     <div v-html="projectDescription" class="mb-12"></div>
-    <div class="flex -mx-2 lg:-mx-12">
-      <div v-if="projectPreviewDesktop" class="mx-2">
-        <img :src="projectPreviewDesktop" :alt="projectTitle + ' desktop preview'" class="border border-solid border-black">
-      </div>
-      <div v-if="projectPreviewMobile" class="mx-2">
-        <img :src="projectPreviewMobile" :alt="projectTitle + ' mobile preview'" class="border border-solid border-black">
-      </div>
-      <div v-if="projectPreviewApp" class="mx-2">
-        <img :src="projectPreviewApp" :alt="projectTitle + ' app preview'">
-      </div>
+    <div class="-mx-2 lg:-mx-12">
+      <img src="https://source.unsplash.com/random/1000x500" alt="">
     </div>
   </div>
 </template>
@@ -81,15 +73,6 @@ export default {
       };
 
       return PrismicDOM.RichText.asHtml(this.project.data.description, linkResolver, htmlSerializer);
-    },
-    projectPreviewDesktop: function() {
-      return this.project.data.preview_desktop.url;
-    },
-    projectPreviewMobile: function() {
-      return this.project.data.preview_mobile.url;
-    },
-    projectPreviewApp: function() {
-      return this.project.data.preview_app.url;
     }
   }
 };

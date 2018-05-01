@@ -21,7 +21,7 @@
     </main>
 
     <footer class="text-center border-t border-grey-light py-8">
-      <p class="text-sm mx-auto mt-0">Built with
+      <p class="text-sm mx-auto my-0">Built with
         <a href="https://vuejs.org/" target="_blank" rel="noopener" class="inline-link">Vue.js</a>,
         <a href="https://prismic.io/" target="_blank" rel="noopener" class="inline-link">Prismic CMS</a> &
         <a href="https://tailwindcss.com/" target="_blank" rel="noopener" class="inline-link">Tailwind CSS</a>.
