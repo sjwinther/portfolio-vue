@@ -1,7 +1,7 @@
 <template>
   <div v-if="project" class="py-12 fade-in">
     <h1>{{ projectTitle }}</h1>
-    <span class="block uppercase -mt-2 mb-8">{{ projectDate }}</span>
+    <span class="block text-lg uppercase -mt-2 mb-8">{{ projectDate }}</span>
     <div v-html="projectDescription" class="mb-12"></div>
     <div class="flex -mx-2 lg:-mx-12">
       <div v-if="projectPreviewDesktop" class="mx-2">
