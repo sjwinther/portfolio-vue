@@ -10,6 +10,9 @@
       <div v-if="projectPreviewMobile" class="mx-2">
         <img :src="projectPreviewMobile" :alt="projectTitle + ' mobile preview'" class="border border-solid border-black">
       </div>
+      <div v-if="projectPreviewApp" class="mx-2">
+        <img :src="projectPreviewApp" :alt="projectTitle + ' app preview'">
+      </div>
     </div>
   </div>
 </template>
@@ -84,6 +87,9 @@ export default {
     },
     projectPreviewMobile: function() {
       return this.project.data.preview_mobile.url;
+    },
+    projectPreviewApp: function() {
+      return this.project.data.preview_app.url;
     }
   }
 };

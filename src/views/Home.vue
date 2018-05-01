@@ -14,7 +14,7 @@
             <div :style="'background-color: ' + project.data.color" class="flex-grow flex items-center justify-center">
               <img :src="project.data.preview_home.url" :alt="project.data.title" class="w-64">
             </div>
-            <span class="relative block text-lg group-hover:text-blue bg-white transition border-t border-black px-6 py-3">
+            <span class="relative block text-lg bg-white transition border-t border-black px-6 py-3">
             {{ project.data.type }}<span class="absolute pin-r text-blue transition group-hover:translate-x-2 mr-6">→</span>
             </span>
           </a>
