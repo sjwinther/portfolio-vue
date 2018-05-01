@@ -2,12 +2,12 @@
   <div class="fade-in">
     <div class="py-12">
       <h1>Hi, I'm Sebastian</h1>
-      <p class="mb-12">I'm a student at the Digital Design and Communication MSc programme at the IT-University of Copenhagen. I like designing digital interfaces and working with user experiences, but most of all I'm motivated by building stuff and learning from it.</p>
+      <p class="mb-12">I'm a student at the Digital Design and Communication MSc programme at the IT-University of Copenhagen. I enjoy designing digital interfaces and working with user experiences. Most of all I'm motivated by building stuff and learning from it.</p>
       <p>Do you want to get in touch? <a href="mailto:sebastianwinther@gmail.com?subject=Let's get coffee" class="inline-block inline-link"><span class="mr-1">→</span>Write me an email</a>.</p>
     </div>
     <div v-if="projects" class="fade-in py-12">
       <h2 class="font-normal text-xl mb-4">Selected projects ↓</h2>
-      <ul class="grid list-reset lg:-mx-12 -mt-8">
+      <ul class="grid list-reset lg:-mx-12 -mt-4">
         <li class="grid-item"></li>
         <router-link v-for="(project, index) in projects" :to="'/project/' + project.uid" :key="index" tag="li" class="grid-item">
           <a class="group h-full flex flex-col justify-end overflow-hidden hover:translate-y--1">

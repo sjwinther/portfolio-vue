@@ -12,7 +12,7 @@
         </router-link>
       </div>
       <div class="hidden sm:block py-3">
-        Digital Designer
+        UX Designer
       </div>
     </nav>
 
@@ -36,7 +36,7 @@
 export default {
   metaInfo: {
     titleTemplate: title => {
-      return title ? `${title} | Sebastian Winther - Digital Designer` : 'Sebastian Winther - Digital Designer';
+      return title ? `${title} | Sebastian Winther - UX Designer` : 'Sebastian Winther - UX Designer';
     }
   },
   data() {
