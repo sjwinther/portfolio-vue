@@ -8,8 +8,10 @@
 * [x] Go ahead and figure out that vue-router
 * [x] Get Prismic up and running
 * [x] Actually build the site
-* [ ] Add: App.initiativet.dk, Initiativet.dk, Merittian, NORD.app
+* [ ] Add: Initiativet.dk, NORD, Lakseshoppen, WWLFDMD
 * [ ] [Add some transitions](https://vuejs.org/v2/guide/transitions.html)
+* [ ] Add 'next project →' btn
+* [ ] Favicon
 * [ ] Kill useless CSS
 * [ ] Meta descriptions + tags + twitter + blargh blargh
 * [ ] 404 handling (including project/404)

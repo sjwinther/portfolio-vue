@@ -10,12 +10,12 @@
       <ul class="grid list-reset lg:-mx-12 -mt-4">
         <li class="grid-item"></li>
         <router-link v-for="(project, index) in projects" :to="'/project/' + project.uid" :key="index" tag="li" class="grid-item">
-          <a class="group h-full flex flex-col justify-end overflow-hidden hover:translate-y--1">
+          <a class="group h-full flex flex-col justify-end overflow-hidden border border-black hover:translate-y--1">
             <div :style="'background-color: ' + project.data.color" class="flex-grow flex items-center justify-center">
-              <h3 class="font-pt-serif text-2xl text-white">{{ project.data.title }}</h3>
+              <img :src="project.data.preview_home.url" :alt="project.data.title" class="w-64">
             </div>
-            <span class="relative block text-lg group-hover:text-blue bg-white border border-grey-light transition px-6 py-3">
-            iOS app<span class="absolute pin-r text-blue transition  group-hover:translate-x-2 mr-6">→</span>
+            <span class="relative block text-lg group-hover:text-blue bg-white transition border-t border-black px-6 py-3">
+            {{ project.data.type }}<span class="absolute pin-r text-blue transition group-hover:translate-x-2 mr-6">→</span>
             </span>
           </a>
         </router-link>

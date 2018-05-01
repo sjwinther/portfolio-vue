@@ -5,10 +5,10 @@
     <div v-html="projectDescription" class="mb-12"></div>
     <div class="flex -mx-2 lg:-mx-12">
       <div v-if="projectPreviewDesktop" class="mx-2">
-        <img :src="projectPreviewDesktop" :alt="projectTitle + ' desktop preview'" class="border border-solid border-grey-light">
+        <img :src="projectPreviewDesktop" :alt="projectTitle + ' desktop preview'" class="border border-solid border-black">
       </div>
       <div v-if="projectPreviewMobile" class="mx-2">
-        <img :src="projectPreviewMobile" :alt="projectTitle + ' mobile preview'" class="border border-solid border-grey-light">
+        <img :src="projectPreviewMobile" :alt="projectTitle + ' mobile preview'" class="border border-solid border-black">
       </div>
     </div>
   </div>
