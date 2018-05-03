@@ -20,10 +20,8 @@
       <router-view :projects="projects"/>
     </main>
 
-    <footer class="border-t-2 border-grey-light py-8">
-      <p class="text-lg text-center mx-auto my-0">
-        <a href="https://github.com/sjwinther/portfolio-vue" target="_blank" rel="noopener" class="inline-link">Work in progress</a> — more projects will be added soon.
-      </p>
+    <footer class="text-lg text-center border-t-2 border-grey-light py-8">
+        <a href="https://github.com/sjwinther/portfolio-vue" target="_blank" rel="noopener" class="inline-link">Work in progress</a>
     </footer>
 
   </div>
