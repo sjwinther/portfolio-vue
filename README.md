@@ -8,13 +8,19 @@
 * [x] Go ahead and figure out that vue-router
 * [x] Get Prismic up and running
 * [x] Actually build the site
-* [ ] Add: Initiativet.dk, NORD, Lakseshoppen, WWLFDMD
-* [ ] [Add some transitions](https://vuejs.org/v2/guide/transitions.html)
 * [x] Favicon
+* [x] Add: Lakseshoppen
+* [x] Add: WWLFDMD
+* [ ] Add: Initiativet
+* [ ] Add: NORD
+
+> Release! And then:
+
+* [ ] [Add some transitions](https://vuejs.org/v2/guide/transitions.html)
 * [ ] Kill useless CSS
-* [ ] Meta descriptions + tags + twitter + blargh blargh
-* [ ] 404 handling (including project/404)
-* [ ] Change routing no non-hash? (or prerender?)
+* [ ] Meta descriptions + tags + twitter + oh god it's too much
+* [ ] 404 handling (incl project/404)
+* [ ] [Change routing](https://router.vuejs.org/en/essentials/history-mode.html) (or prerender?)
 * [ ] Make a build script to gh-pages branch
 * [ ] Add 'next project →' btn
 * [ ] Add a printable resume-page

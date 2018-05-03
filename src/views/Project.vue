@@ -1,10 +1,11 @@
 <template>
-  <div v-if="project" class="py-12 fade-in">
+  <div v-if="project" class="pt-12 fade-in">
     <h1>{{ projectTitle }}</h1>
-    <span class="block text-lg uppercase -mt-2 mb-8">{{ projectDate }}</span>
-    <div v-html="projectDescription" class="mb-12"></div>
-    <div class="-mx-2 lg:-mx-12">
-      <img src="https://source.unsplash.com/random/1000x500" alt="">
+    <div class="text-lg -mt-6 mb-12 -mx-2">
+      <span class="block sm:inline-block sm:pr-4 sm:border-r-2 sm:border-grey-light m-2">{{ projectDate }}</span>
+      <a :href="projectLink" target="_blank" rel="noopener" class="inline-link m-2">{{ prettyProjectLink }}</a>
+    </div>
+    <div v-for="contentBlock in projectContent" v-html="contentBlock" class="content-block mb-12 md:mb-16" />
     </div>
   </div>
 </template>
@@ -55,24 +56,54 @@ export default {
       }
       return season + " '" + year;
     },
-    projectDescription: function() {
+    projectLink: function() {
+      return this.project.data.link;
+    },
+    prettyProjectLink: function() {
+      return this.projectLink.replace('https://', '').replace('http://', '');
+    },
+    projectContent: function() {
       const PrismicDOM = require('prismic-dom');
 
-      const linkResolver = function(doc) {
-        if (doc.type === 'project') return '/project/' + doc.uid;
-        return '/doc/' + doc.id;
-      };
-
-      const htmlSerializer = function(element, content) {
-        if (element.type == 'hyperlink') {
-          return (
-            '<a href="' + element.data.url + '" target="_blank" rel="noopener" class="inline-link">' + content + '</a>'
-          );
+      const projectContent = this.project.data.body.map(function(slice) {
+        switch (slice.slice_type) {
+          case 'text':
+            return PrismicDOM.RichText.asHtml(slice.primary.text);
+          case 'image':
+            return `
+              <figure class="lg:-mx-12">
+                <img src="${slice.primary.image.url}"/>
+                <figcaption>${slice.primary.image_description}</figcaption>
+              </figure>
+          `;
+          case 'left-side_image':
+            return `
+              <div class="flex flex-wrap items-center -mx-4">
+                <figure class="w-full md:w-1/2 px-4 md:pr-12">
+                  <img src="${slice.primary.image.url}"/>
+                  <figcaption>${slice.primary.image_description}</figcaption>
+                </figure>
+                <div class="w-full md:w-1/2 px-4">
+                  ${PrismicDOM.RichText.asHtml(slice.primary.text)}
+                </div>
+              </div>
+          `;
+          case 'right-side_image':
+            return `
+              <div class="flex flex-wrap flex-col-reverse md:flex-row items-center -mx-4">
+                <div class="w-full md:w-1/2 px-4">
+                  ${PrismicDOM.RichText.asHtml(slice.primary.text)}
+                </div>
+                <figure class="w-full md:w-1/2 md:pl-12 px-4">
+                  <img src="${slice.primary.image.url}"/>
+                  <figcaption>${slice.primary.image_description}</figcaption>
+                </figure>
+              </div>
+          `;
         }
-        return null;
-      };
+      });
 
-      return PrismicDOM.RichText.asHtml(this.project.data.description, linkResolver, htmlSerializer);
+      return projectContent;
     }
   }
 };

@@ -2,17 +2,17 @@
 
   <div id="app" class="min-h-full flex flex-col max-w-lg px-4 mx-auto">
 
-    <nav class="flex text-lg border-b border-grey-light py-4">
-      <div class="flex-auto border border-white py-3">
+    <nav class="flex text-lg border-b-2 border-grey-light py-4">
+      <div class="flex-auto py-3">
         S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
       </div>
       <div class="fixed pin-x pin-t text-center">
-        <router-link to="/" class="group inline-block bg-white border border-grey-light p-3 my-4">
+        <router-link to="/" class="group inline-block bg-white rounded-sm shadow p-3 my-4">
           <span class="inline-block text-blue transition mr-2 group-hover:translate-x--1">←</span>Home
         </router-link>
       </div>
-      <div class="hidden sm:block border border-white py-3">
-        UX Designer
+      <div class="py-3">
+        <span class="hidden sm:inline">UX </span>Designer
       </div>
     </nav>
 
@@ -20,11 +20,9 @@
       <router-view :projects="projects"/>
     </main>
 
-    <footer class="text-center border-t border-grey-light py-8">
-      <p class="text-sm mx-auto my-0">Built with
-        <a href="https://vuejs.org/" target="_blank" rel="noopener" class="inline-link">Vue.js</a>,
-        <a href="https://prismic.io/" target="_blank" rel="noopener" class="inline-link">Prismic CMS</a> &
-        <a href="https://tailwindcss.com/" target="_blank" rel="noopener" class="inline-link">Tailwind CSS</a>.
+    <footer class="border-t-2 border-grey-light py-8">
+      <p class="text-lg text-center mx-auto my-0">
+        <a href="https://github.com/sjwinther/portfolio-vue" target="_blank" rel="noopener" class="inline-link">Work in progress</a> — more projects will be added soon.
       </p>
     </footer>
 
@@ -90,13 +88,13 @@ body {
   @apply .h-full;
 }
 html {
-  @apply .font-plex-sans .leading-none .tracking-wide .text-black .bg-white .antialiased;
+  @apply .font-plex-sans .leading-none .tracking-wide .text-black .bg-grey-lightest .antialiased;
 }
 a {
   @apply .text-inherit .no-underline;
 }
 h1 {
-  @apply .font-pt-serif .text-3xl .mb-8;
+  @apply .font-pt-serif .text-3xl .mb-12;
 }
 p {
   @apply .text-xl .leading-normal .max-w-lg .mb-4;
@@ -136,6 +134,40 @@ button,
   }
   to {
     opacity: 1;
+  }
+}
+
+/* GRID STYLING */
+
+.grid {
+  display: grid;
+  grid-auto-rows: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+@media screen and (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+.grid-item {
+  grid-row: span 8;
+}
+.grid-item:nth-child(1) {
+  grid-row: span 1;
+}
+
+/* PROJECTS STYLING */
+
+.content-block img {
+  @apply .rounded-sm .shadow;
+}
+.content-block figcaption {
+  @apply .max-w-md .text-center .leading-normal .mx-auto .mt-2;
+}
+@media screen and (max-width: 576px) {
+  .content-block figure {
+    @apply .mb-8;
   }
 }
 </style>
