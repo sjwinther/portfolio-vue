@@ -46,8 +46,6 @@ let colors = {
   transparent: 'transparent',
   inherit: 'inherit',
 
-  'white-50': 'rgba(255,255,255,0.5)',
-
   black: '#22292f',
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
@@ -651,6 +649,7 @@ module.exports = {
     '2': '0.5rem',
     '3': '0.75rem',
     '4': '1rem',
+    '5': '1.15rem',
     '6': '1.5rem',
     '8': '2rem',
     '12': '3rem',
@@ -701,8 +700,8 @@ module.exports = {
   */
 
   shadows: {
-    default: '0 1px 3px 0 rgba(0,0,0,0.2)',
-    lg: '0 2px 6px 0 rgba(0,0,0,0.1)'
+    default: '0 1px 3px 0 rgba(34,41,47,0.25)',
+    lg: '0 3px 9px 0 rgba(34,41,47,0.125)'
   },
 
   /*

@@ -2,12 +2,12 @@
 
   <div id="app" class="min-h-full flex flex-col max-w-lg px-4 mx-auto">
 
-    <nav class="flex text-lg border-b-2 border-grey-light py-4">
+    <nav class="flex text-lg border-b-2 border-grey-lighter py-5">
       <div class="flex-auto py-3">
         S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
       </div>
       <div class="fixed pin-x pin-t text-center z-5">
-        <router-link to="/" class="group inline-block bg-white rounded-sm shadow p-3 my-4">
+        <router-link to="/" class="group inline-block bg-white rounded-sm shadow p-3 my-5">
           <span class="inline-block text-blue transition mr-2 group-hover:translate-x--1">←</span>Home
         </router-link>
       </div>
@@ -16,11 +16,11 @@
       </div>
     </nav>
 
-    <main class="flex-auto py-12">
+    <main class="flex-auto py-6 sm:py-12">
       <router-view :projects="projects"/>
     </main>
 
-    <footer class="text-lg text-center border-t-2 border-grey-light py-8">
+    <footer class="text-lg text-center border-t-2 border-grey-lighter py-8">
         <a href="https://github.com/sjwinther/portfolio-vue" target="_blank" rel="noopener" class="inline-link">Work in progress</a>
     </footer>
 
@@ -95,13 +95,18 @@ h1 {
   @apply .font-pt-serif .text-3xl .mb-12;
 }
 p {
-  @apply .text-xl .leading-normal .max-w-lg .mb-4;
+  @apply .text-lg .leading-normal .max-w-lg .mb-4;
+}
+@media screen and (min-width: 576px) {
+  p {
+    @apply .text-xl;
+  }
 }
 
 a,
 button,
 .transition {
-  transition: 0.15s ease-out;
+  transition: 0.1s ease-out;
 }
 
 .inline-link {
@@ -126,6 +131,8 @@ button,
   }
 }
 
+/* ANIMATIONS */
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -140,12 +147,12 @@ button,
 .grid {
   display: grid;
   grid-auto-rows: 1rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 2rem;
 }
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 576px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 .grid-item {
@@ -157,15 +164,19 @@ button,
 
 /* PROJECTS STYLING */
 
-.content-block img {
-  @apply .rounded-sm .shadow;
+.content-block img,
+.content-block video {
+  @apply .max-w-full .rounded-sm .shadow;
 }
 .content-block figcaption {
   @apply .max-w-md .text-center .leading-normal .mx-auto .mt-2;
 }
-@media screen and (max-width: 576px) {
+.content-block figure {
+  @apply .mb-8;
+}
+@media screen and (min-width: 576px) {
   .content-block figure {
-    @apply .mb-8;
+    @apply .mb-0;
   }
 }
 </style>

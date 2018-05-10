@@ -1,6 +1,6 @@
 # portfolio-vue
 
-> Personal portfolio project built using [vue-cli's webpack-simple config](https://github.com/vuejs-templates/webpack-simple)
+> Personal portfolio project experimenting with [Vue](https://github.com/vuejs/vue) & [Prismic](https://github.com/prismicio/prismic-javascript)
 
 * [x] vue-cli --> webpack-simple go
 * [x] Get Tailwind up and running
@@ -16,12 +16,13 @@
 
 > Release! And then:
 
-* [ ] [Add some transitions](https://vuejs.org/v2/guide/transitions.html)
+* [ ] Image & video optimization
+* [ ] [Add transitions](https://vuejs.org/v2/guide/transitions.html) instead of the clunky fade-ins
 * [ ] Kill useless CSS
 * [ ] Meta descriptions + tags + twitter + oh god it's too much
-* [ ] 404 handling (incl project/404)
 * [ ] [Change routing](https://router.vuejs.org/en/essentials/history-mode.html) (or prerender?)
 * [ ] Make a build script to gh-pages branch
+* [ ] 404 handling
 * [ ] Add 'next project →' btn
 * [ ] Add a printable resume-page
 * [ ] Have it change colors according to sun up/down (CSS variables could do the trick?)
