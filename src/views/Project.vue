@@ -70,7 +70,7 @@ export default {
             return PrismicDOM.RichText.asHtml(slice.primary.text);
           case 'image':
             return `
-              <figure class="-mx-4 sm:mx-0 lg:-mx-12">
+              <figure class="-mx-2 sm:mx-0 lg:-mx-12">
                 <img src="${slice.primary.image.url}" />
                 <figcaption>${slice.primary.image_description}</figcaption>
               </figure>
@@ -108,6 +108,18 @@ export default {
                 </figure>
               </div>
           `;
+          case 'image_gallery':
+            return `
+              <figure>
+                <div class="flex flex-wrap sm:flex-no-wrap items-center -mx-2 lg:-mx-14 -my-1">
+                  ${slice.items
+                    .map(function(item) {
+                      return `<div class="mx-2 my-1"><img src=${item.gallery_image.url} /></div>`;
+                    })
+                    .join('')}
+                </div>
+                <figcaption>${slice.primary.gallery_description}</figcaption>
+              </figure>`;
         }
       });
 

@@ -45,7 +45,9 @@ export default {
       const Prismic = require('prismic-javascript');
       Prismic.getApi('https://sebastianwinther.prismic.io/api/v2')
         .then(function(api) {
-          return api.query(Prismic.Predicates.at('document.type', 'project'), { orderings: '[my.project.date desc]' });
+          return api.query(Prismic.Predicates.at('document.type', 'project', 'document.tags', ['released']), {
+            orderings: '[my.project.date desc]'
+          });
         })
         .then(
           response => {
@@ -166,7 +168,10 @@ button,
 
 .content-block img,
 .content-block video {
-  @apply .max-w-full .rounded-sm .shadow;
+  @apply .rounded-sm .shadow;
+}
+.content-block video {
+  @apply .max-w-full;
 }
 .content-block figcaption {
   @apply .max-w-md .text-center .leading-normal .mx-auto .mt-2;
