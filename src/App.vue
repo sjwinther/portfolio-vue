@@ -45,9 +45,12 @@ export default {
       const Prismic = require('prismic-javascript');
       Prismic.getApi('https://sebastianwinther.prismic.io/api/v2')
         .then(function(api) {
-          return api.query(Prismic.Predicates.at('document.type', 'project', 'document.tags', ['released']), {
-            orderings: '[my.project.date desc]'
-          });
+          return api.query(
+            [Prismic.Predicates.at('document.type', 'project'), Prismic.Predicates.at('document.tags', ['released'])],
+            {
+              orderings: '[my.project.date desc]'
+            }
+          );
         })
         .then(
           response => {
