@@ -6,8 +6,8 @@
       <div class="flex-auto py-3">
         S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
       </div>
-      <div class="fixed pin-x pin-t text-center z-5">
-        <router-link to="/" class="group inline-block bg-white rounded-sm shadow p-3 my-5">
+      <div class="fixed pin-x pin-t text-center">
+        <router-link to="/" class="relative z-10 group inline-block bg-white rounded-sm shadow p-3 my-5">
           <span class="inline-block text-blue transition mr-2 group-hover:translate-x--1">←</span>Home
         </router-link>
       </div>
@@ -46,7 +46,10 @@ export default {
       Prismic.getApi('https://sebastianwinther.prismic.io/api/v2')
         .then(function(api) {
           return api.query(
-            [Prismic.Predicates.at('document.type', 'project'), Prismic.Predicates.at('document.tags', ['released'])],
+            [
+              Prismic.Predicates.at('document.type', 'project')
+              Prismic.Predicates.at('document.tags', ['released'])
+            ],
             {
               orderings: '[my.project.date desc]'
             }
