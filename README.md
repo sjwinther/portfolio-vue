@@ -11,8 +11,8 @@
 * [x] Favicon
 * [x] Add: Lakseshoppen
 * [x] Add: WWLFDMD
-* [ ] Add: Initiativet
-* [ ] Add: NORD
+* [x] Add: Initiativet
+* [x] Add: NORD
 
 > Release! And then:
 

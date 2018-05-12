@@ -2,12 +2,12 @@
 
   <div id="app" class="min-h-full flex flex-col max-w-lg px-4 mx-auto">
 
-    <nav class="flex text-lg border-b-2 border-grey-lighter py-5">
+    <nav class="flex border-b-2 border-grey-light py-3">
       <div class="flex-auto py-3">
         S<span class="hidden sm:inline">ebastian </span>W<span class="hidden sm:inline">inther</span>
       </div>
       <div class="fixed pin-x pin-t text-center">
-        <router-link to="/" class="relative z-10 group inline-block bg-white rounded-sm shadow p-3 my-5">
+        <router-link to="/" class="relative z-10 group inline-block bg-white rounded-sm shadow p-3 my-3">
           <span class="inline-block text-blue transition mr-2 group-hover:translate-x--1">←</span>Home
         </router-link>
       </div>
@@ -20,7 +20,7 @@
       <router-view :projects="projects"/>
     </main>
 
-    <footer class="text-lg text-center border-t-2 border-grey-lighter py-8">
+    <footer class="text-center border-t-2 border-grey-light py-6">
         <a href="https://github.com/sjwinther/portfolio-vue" target="_blank" rel="noopener" class="inline-link">Work in progress</a>
     </footer>
 
@@ -46,10 +46,7 @@ export default {
       Prismic.getApi('https://sebastianwinther.prismic.io/api/v2')
         .then(function(api) {
           return api.query(
-            [
-              Prismic.Predicates.at('document.type', 'project')
-              Prismic.Predicates.at('document.tags', ['released'])
-            ],
+            [Prismic.Predicates.at('document.type', 'project'), Prismic.Predicates.at('document.tags', ['released'])],
             {
               orderings: '[my.project.date desc]'
             }
@@ -96,6 +93,9 @@ body {
 html {
   @apply .font-plex-sans .leading-none .tracking-wide .text-black .bg-grey-lightest .antialiased;
 }
+body {
+  @apply .text-lg;
+}
 a {
   @apply .text-inherit .no-underline;
 }
@@ -103,12 +103,7 @@ h1 {
   @apply .font-pt-serif .text-3xl .mb-12;
 }
 p {
-  @apply .text-lg .leading-normal .max-w-lg .mb-4;
-}
-@media screen and (min-width: 576px) {
-  p {
-    @apply .text-xl;
-  }
+  @apply .text-lg .leading-normal .max-w-md .mb-4;
 }
 
 a,
@@ -156,15 +151,19 @@ button,
   display: grid;
   grid-auto-rows: 1rem;
   grid-template-columns: 1fr;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
+}
+.grid-item {
+  grid-row: span 10;
 }
 @media screen and (min-width: 576px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
   }
-}
-.grid-item {
-  grid-row: span 8;
+  .grid-item {
+    grid-row: span 8;
+  }
 }
 .grid-item:nth-child(1) {
   grid-row: span 1;
@@ -172,6 +171,12 @@ button,
 
 /* PROJECTS STYLING */
 
+.content-block a {
+  @apply .text-blue;
+}
+.content-block a:hover {
+  @apply .text-white .bg-blue;
+}
 .content-block img,
 .content-block video {
   @apply .rounded-sm .shadow;
@@ -180,7 +185,7 @@ button,
   @apply .max-w-full;
 }
 .content-block figcaption {
-  @apply .max-w-md .text-center .leading-normal .mx-auto .mt-2;
+  @apply .max-w-md .text-base .text-center .leading-normal .mx-auto .mt-2;
 }
 .content-block figure {
   @apply .mb-8;

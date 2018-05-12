@@ -1,9 +1,9 @@
 <template>
   <div v-if="project" class="pt-6 sm:pt-12 -mb-6 sm:mb-0 fade-in">
     <h1>{{ projectTitle }}</h1>
-    <div class="text-lg -mt-6 mb-12 -mx-2">
-      <span class="inline-block pr-4 border-r-2 border-grey-light m-2">{{ projectDate }}</span>
-      <a :href="projectLink" target="_blank" rel="noopener" class="inline-link m-2">{{ prettyProjectLink }}</a>
+    <div class="sm:flex -mt-6 mb-12 -mx-2">
+      <span class="block sm:border-r-2 border-grey-light sm:pr-4 m-2">{{ projectDate }}</span>
+      <span class="block m-2"><a :href="projectLink" target="_blank" rel="noopener" class="inline-link">{{ prettyProjectLink }}</a></span>
     </div>
     <div v-for="contentBlock in projectContent" v-html="contentBlock" class="content-block mb-12 md:mb-16" />
   </div>
@@ -111,10 +111,10 @@ export default {
           case 'image_gallery':
             return `
               <figure>
-                <div class="flex flex-wrap sm:flex-no-wrap items-center -mx-2 lg:-mx-14 -my-1">
+                <div class="flex items-center -mx-2 lg:-mx-14">
                   ${slice.items
                     .map(function(item) {
-                      return `<div class="mx-2 my-1"><img src=${item.gallery_image.url} /></div>`;
+                      return `<div class="mx-2"><img src=${item.gallery_image.url} /></div>`;
                     })
                     .join('')}
                 </div>

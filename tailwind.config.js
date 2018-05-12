@@ -701,8 +701,8 @@ module.exports = {
   */
 
   shadows: {
-    default: '0 1px 3px 0 rgba(34,41,47,0.25)',
-    lg: '0 3px 9px 0 rgba(34,41,47,0.125)'
+    default: '0 1px 3px 0 rgba(34,41,47,0.15)',
+    lg: '0 3px 9px 0 rgba(34,41,47,0.075)'
   },
 
   /*
