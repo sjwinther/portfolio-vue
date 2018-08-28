@@ -18,12 +18,10 @@
 
 * [ ] Image & video optimization
 * [ ] [Add transitions](https://vuejs.org/v2/guide/transitions.html) instead of the clunky fade-ins
-* [ ] Kill useless CSS
+* [ ] Install uncss / purgecss
 * [ ] Meta descriptions + tags + twitter + oh god it's too much
-* [ ] [Change routing](https://router.vuejs.org/en/essentials/history-mode.html) (or prerender?)
-* [ ] Make a build script to gh-pages branch
-* [ ] 404 handling
+* [x] [Change routing](https://router.vuejs.org/en/essentials/history-mode.html)
+* [ ] 404 handling on /project/
 * [ ] Add 'next project →' btn
 * [ ] Add a printable resume-page
-* [ ] Have it change colors according to sun up/down (CSS variables could do the trick?)
-* [ ] [Vue loop](https://github.com/JosephSmith127/vue-loop)
+* [ ] Day/night mode (CSS variables could do the trick?)
