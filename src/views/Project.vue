@@ -1,5 +1,6 @@
 <template>
-  <div v-if="project" class="pt-6 sm:pt-12 -mb-6 sm:mb-0 fade-in">
+  <missing-page v-if="project === 404" />
+  <div v-else class="pt-6 sm:pt-12 -mb-6 sm:mb-0 fade-in">
     <h1>{{ projectTitle }}</h1>
     <div class="sm:flex -mt-6 mb-12 -mx-2">
       <span class="block sm:border-r-2 border-grey-light sm:pr-4 m-2">{{ projectDate }}</span>
@@ -7,7 +8,6 @@
     </div>
     <div v-for="contentBlock in projectContent" v-html="contentBlock" class="content-block mb-12 md:mb-16" />
   </div>
-  <missing-page v-else />
 </template>
 
 <script>
@@ -36,7 +36,7 @@ export default {
       if (this.projects) {
         return this.projects.find(theProject);
       }
-      return null;
+      return 404;
     },
     projectTitle: function() {
       return this.project.data.title;
