@@ -7,12 +7,18 @@
     </div>
     <div v-for="contentBlock in projectContent" v-html="contentBlock" class="content-block mb-12 md:mb-16" />
   </div>
+  <missing-page v-else />
 </template>
 
 <script>
+import MissingPage from './404.vue'
+
 export default {
-  props: ['projects', 'uid'],
   name: 'Project',
+  props: ['projects', 'uid'],
+  components: {
+    MissingPage
+  },
   metaInfo() {
     if (this.project) {
       return {
@@ -71,7 +77,10 @@ export default {
           case 'image':
             return `
               <figure class="-mx-2 sm:mx-0 lg:-mx-12">
-                <img src="${slice.primary.image.url}" />
+                <picture>
+                  <source srcset="${slice.primary.image.url}" media="(min-width: 576)" />
+                  <img src="${slice.primary.image.sm.url}" alt="${slice.primary.image_description}" />
+                </picture>
                 <figcaption>${slice.primary.image_description}</figcaption>
               </figure>
           `;
@@ -88,7 +97,10 @@ export default {
             return `
               <div class="flex flex-wrap items-center -mx-4">
                 <figure class="w-full md:w-1/2 px-4 md:pr-12">
-                  <img src="${slice.primary.image.url}"/>
+                  <picture>
+                    <source srcset="${slice.primary.image.url}" media="(min-width: 576px)" />
+                    <img src="${slice.primary.image.sm.url}" alt="${slice.primary.image_description}" />
+                  </picture>
                   <figcaption>${slice.primary.image_description}</figcaption>
                 </figure>
                 <div class="w-full md:w-1/2 px-4">
@@ -103,7 +115,10 @@ export default {
                   ${PrismicDOM.RichText.asHtml(slice.primary.text)}
                 </div>
                 <figure class="w-full md:w-1/2 md:pl-12 px-4">
-                  <img src="${slice.primary.image.url}"/>
+                  <picture>
+                    <source srcset="${slice.primary.image.url}" media="(min-width: 576px)" />
+                    <img src="${slice.primary.image.sm.url}" alt="${slice.primary.image_description}" />
+                  </picture>
                   <figcaption>${slice.primary.image_description}</figcaption>
                 </figure>
               </div>
@@ -114,7 +129,13 @@ export default {
                 <div class="flex items-center -mx-2 lg:-mx-14">
                   ${slice.items
                     .map(function(item) {
-                      return `<div class="mx-2"><img src=${item.gallery_image.url} /></div>`;
+                      return `
+                        <div class="mx-2">
+                          <picture>
+                            <source srcset="${item.gallery_image.url}" media="(min-width: 576px)" />
+                            <img src="${item.gallery_image.sm.url}" />
+                          </picture>
+                        </div>`;
                     })
                     .join('')}
                 </div>

@@ -12,7 +12,7 @@
         </router-link>
       </div>
       <div class="py-3">
-        <span class="hidden sm:inline">UX </span>Designer
+        UX<span class="hidden sm:inline"> Designer</span>
       </div>
     </nav>
 
