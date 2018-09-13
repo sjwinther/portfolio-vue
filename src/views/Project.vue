@@ -1,6 +1,5 @@
 <template>
-  <missing-page v-if="project === 404" />
-  <div v-else class="pt-6 sm:pt-12 -mb-6 sm:mb-0 fade-in">
+  <div v-if="project" class="pt-6 sm:pt-12 -mb-6 sm:mb-0 fade-in">
     <h1>{{ projectTitle }}</h1>
     <div class="sm:flex -mt-6 mb-12 -mx-2">
       <span class="block sm:border-r-2 border-grey-light sm:pr-4 m-2">{{ projectDate }}</span>
@@ -11,14 +10,9 @@
 </template>
 
 <script>
-import MissingPage from './404.vue'
-
 export default {
   name: 'Project',
   props: ['projects', 'uid'],
-  components: {
-    MissingPage
-  },
   metaInfo() {
     if (this.project) {
       return {
@@ -36,7 +30,7 @@ export default {
       if (this.projects) {
         return this.projects.find(theProject);
       }
-      return 404;
+      return null;
     },
     projectTitle: function() {
       return this.project.data.title;
