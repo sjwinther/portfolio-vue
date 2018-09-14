@@ -17,7 +17,7 @@
 > Release! And then:
 
 * [x] [Change routing](https://router.vuejs.org/en/essentials/history-mode.html)
-* [ ] 404 handling on /project/
+* [x] 404 handling on /project/
 * [ ] Grid-based img galleries
 * [ ] [Add transitions](https://vuejs.org/v2/guide/transitions.html) instead of the clunky fade-ins
 * [ ] Install uncss / purgecss

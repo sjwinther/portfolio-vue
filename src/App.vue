@@ -17,7 +17,7 @@
     </nav>
 
     <main class="flex-auto py-6 sm:py-12">
-      <router-view :projects="projects"/>
+      <router-view :projects="projects" :loading="loading" />
     </main>
 
     <footer class="text-center border-t-2 border-grey-light py-6">
@@ -37,7 +37,8 @@ export default {
   },
   data() {
     return {
-      projects: ''
+      projects: '',
+      loading: true
     };
   },
   methods: {
@@ -55,6 +56,7 @@ export default {
         .then(
           response => {
             this.projects = response.results;
+            this.loading = false;
           },
           function(err) {
             console.log('Something went wrong: ', err);
