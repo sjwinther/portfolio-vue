@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      projects: '',
+      projects: [],
       loading: true
     };
   },

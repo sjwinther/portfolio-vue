@@ -29,16 +29,16 @@ export default {
     return { title: '' };
   },
   computed: {
-    project () {
+    project() {
       if (this.projects) {
         return this.projects[this.projects.findIndex(project => project.uid === this.uid)];
       }
       return null;
     },
-    projectTitle: function() {
+    projectTitle() {
       return this.project.data.title;
     },
-    projectDate: function() {
+    projectDate() {
       const date = this.project.data.date;
       const month = date.substring(5, 7);
       let year = date.substring(2, 4);
@@ -58,13 +58,13 @@ export default {
       }
       return season + " '" + year;
     },
-    projectLink: function() {
+    projectLink() {
       return this.project.data.link;
     },
-    prettyProjectLink: function() {
+    prettyProjectLink() {
       return this.projectLink.replace('https://', '').replace('http://', '');
     },
-    projectContent: function() {
+    projectContent() {
       const PrismicDOM = require('prismic-dom');
 
       const projectContent = this.project.data.body.map(function(slice) {
