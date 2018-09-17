@@ -32,7 +32,9 @@
 export default {
   metaInfo: {
     titleTemplate: title => {
-      return title ? `${title} | Sebastian Winther - UX Designer` : 'Sebastian Winther - UX Designer';
+      return title
+        ? `${title} | Sebastian Winther - UX Designer`
+        : "Sebastian Winther - UX Designer";
     }
   },
   data() {
@@ -43,13 +45,16 @@ export default {
   },
   methods: {
     getContent() {
-      const Prismic = require('prismic-javascript');
-      Prismic.getApi('https://sebastianwinther.prismic.io/api/v2')
+      const Prismic = require("prismic-javascript");
+      Prismic.getApi("https://sebastianwinther.prismic.io/api/v2")
         .then(function(api) {
           return api.query(
-            [Prismic.Predicates.at('document.type', 'project'), Prismic.Predicates.at('document.tags', ['released'])],
+            [
+              Prismic.Predicates.at("document.type", "project"),
+              Prismic.Predicates.at("document.tags", ["released"])
+            ],
             {
-              orderings: '[my.project.date desc]'
+              orderings: "[my.project.date desc]"
             }
           );
         })
@@ -59,7 +64,7 @@ export default {
             this.loading = false;
           },
           function(err) {
-            console.log('Something went wrong: ', err);
+            console.log("Something went wrong: ", err);
           }
         );
     }

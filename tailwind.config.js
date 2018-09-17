@@ -24,7 +24,7 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-let defaultConfig = require('tailwindcss/defaultConfig')();
+let defaultConfig = require("tailwindcss/defaultConfig")();
 
 /*
 |-------------------------------------------------------------------------------
@@ -43,20 +43,20 @@ let defaultConfig = require('tailwindcss/defaultConfig')();
 */
 
 let colors = {
-  transparent: 'transparent',
-  inherit: 'inherit',
+  transparent: "transparent",
+  inherit: "inherit",
 
-  black: '#22292f',
-  'grey-darkest': '#3d4852',
-  'grey-darker': '#606f7b',
-  'grey-dark': '#8795a1',
-  grey: '#b8c2cc',
-  'grey-light': '#dae1e7',
-  'grey-lighter': '#f1f5f8',
-  'grey-lightest': '#f8fafc',
-  white: '#ffffff',
+  black: "#22292f",
+  "grey-darkest": "#3d4852",
+  "grey-darker": "#606f7b",
+  "grey-dark": "#8795a1",
+  grey: "#b8c2cc",
+  "grey-light": "#dae1e7",
+  "grey-lighter": "#f1f5f8",
+  "grey-lightest": "#f8fafc",
+  white: "#ffffff",
 
-  blue: 'blue'
+  blue: "blue"
 };
 
 module.exports = {
@@ -95,10 +95,10 @@ module.exports = {
   */
 
   screens: {
-    sm: '576px',
-    md: '768px',
-    lg: '992px',
-    xl: '1200px'
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1200px"
   },
 
   /*
@@ -120,35 +120,35 @@ module.exports = {
   */
 
   fonts: {
-    'plex-sans': [
-      'IBM Plex Sans',
-      'system-ui',
-      'BlinkMacSystemFont',
-      '-apple-system',
-      'Segoe UI',
-      'Roboto',
-      'Oxygen',
-      'Ubuntu',
-      'Cantarell',
-      'Fira Sans',
-      'Droid Sans',
-      'Helvetica Neue',
-      'sans-serif'
+    "plex-sans": [
+      "IBM Plex Sans",
+      "system-ui",
+      "BlinkMacSystemFont",
+      "-apple-system",
+      "Segoe UI",
+      "Roboto",
+      "Oxygen",
+      "Ubuntu",
+      "Cantarell",
+      "Fira Sans",
+      "Droid Sans",
+      "Helvetica Neue",
+      "sans-serif"
     ],
-    'pt-serif': ['PT Serif', 'Georgia', 'serif'],
+    "pt-serif": ["PT Serif", "Georgia", "serif"],
     sans: [
-      'system-ui',
-      'BlinkMacSystemFont',
-      '-apple-system',
-      'Segoe UI',
-      'Roboto',
-      'Oxygen',
-      'Ubuntu',
-      'Cantarell',
-      'Fira Sans',
-      'Droid Sans',
-      'Helvetica Neue',
-      'sans-serif'
+      "system-ui",
+      "BlinkMacSystemFont",
+      "-apple-system",
+      "Segoe UI",
+      "Roboto",
+      "Oxygen",
+      "Ubuntu",
+      "Cantarell",
+      "Fira Sans",
+      "Droid Sans",
+      "Helvetica Neue",
+      "sans-serif"
     ]
   },
 
@@ -172,15 +172,15 @@ module.exports = {
   */
 
   textSizes: {
-    xs: '.75rem', // 12px
-    sm: '.875rem', // 14px
-    base: '1rem', // 16px
-    lg: '1.125rem', // 18px
-    xl: '1.25rem', // 20px
-    '2xl': '1.5rem', // 24px
-    '3xl': '1.875rem', // 30px
-    '4xl': '2.25rem', // 36px
-    '5xl': '3rem' // 48px
+    xs: ".75rem", // 12px
+    sm: ".875rem", // 14px
+    base: "1rem", // 16px
+    lg: "1.125rem", // 18px
+    xl: "1.25rem", // 20px
+    "2xl": "1.5rem", // 24px
+    "3xl": "1.875rem", // 30px
+    "4xl": "2.25rem", // 36px
+    "5xl": "3rem" // 48px
   },
 
   /*
@@ -234,9 +234,9 @@ module.exports = {
   */
 
   tracking: {
-    tight: '-0.05em',
-    normal: '0',
-    wide: '0.01em'
+    tight: "-0.05em",
+    normal: "0",
+    wide: "0.01em"
   },
 
   /*
@@ -283,9 +283,9 @@ module.exports = {
   */
 
   borderWidths: {
-    default: '1px',
-    '0': '0',
-    '2': '2px'
+    default: "1px",
+    "0": "0",
+    "2": "2px"
   },
 
   /*
@@ -305,7 +305,7 @@ module.exports = {
   |
   */
 
-  borderColors: Object.assign({ default: colors['grey-light'] }, colors),
+  borderColors: Object.assign({ default: colors["grey-light"] }, colors),
 
   /*
   |-----------------------------------------------------------------------------
@@ -324,9 +324,9 @@ module.exports = {
   */
 
   borderRadius: {
-    none: '0',
-    sm: '.125rem',
-    full: '9999px'
+    none: "0",
+    sm: ".125rem",
+    full: "9999px"
   },
 
   /*
@@ -350,34 +350,34 @@ module.exports = {
   */
 
   width: {
-    auto: 'auto',
-    px: '1px',
-    '1': '0.25rem',
-    '2': '0.5rem',
-    '3': '0.75rem',
-    '4': '1rem',
-    '6': '1.5rem',
-    '8': '2rem',
-    '10': '2.5rem',
-    '12': '3rem',
-    '16': '4rem',
-    '24': '6rem',
-    '32': '8rem',
-    '48': '12rem',
-    '64': '16rem',
-    '1/2': '50%',
-    '1/3': '33.33333%',
-    '2/3': '66.66667%',
-    '1/4': '25%',
-    '3/4': '75%',
-    '1/5': '20%',
-    '2/5': '40%',
-    '3/5': '60%',
-    '4/5': '80%',
-    '1/6': '16.66667%',
-    '5/6': '83.33333%',
-    full: '100%',
-    screen: '100vw'
+    auto: "auto",
+    px: "1px",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "10": "2.5rem",
+    "12": "3rem",
+    "16": "4rem",
+    "24": "6rem",
+    "32": "8rem",
+    "48": "12rem",
+    "64": "16rem",
+    "1/2": "50%",
+    "1/3": "33.33333%",
+    "2/3": "66.66667%",
+    "1/4": "25%",
+    "3/4": "75%",
+    "1/5": "20%",
+    "2/5": "40%",
+    "3/5": "60%",
+    "4/5": "80%",
+    "1/6": "16.66667%",
+    "5/6": "83.33333%",
+    full: "100%",
+    screen: "100vw"
   },
 
   /*
@@ -396,23 +396,23 @@ module.exports = {
   */
 
   height: {
-    auto: 'auto',
-    px: '1px',
-    '1': '0.25rem',
-    '2': '0.5rem',
-    '3': '0.75rem',
-    '4': '1rem',
-    '6': '1.5rem',
-    '8': '2rem',
-    '10': '2.5rem',
-    '12': '3rem',
-    '16': '4rem',
-    '24': '6rem',
-    '32': '8rem',
-    '48': '12rem',
-    '64': '16rem',
-    full: '100%',
-    screen: '100vh'
+    auto: "auto",
+    px: "1px",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "10": "2.5rem",
+    "12": "3rem",
+    "16": "4rem",
+    "24": "6rem",
+    "32": "8rem",
+    "48": "12rem",
+    "64": "16rem",
+    full: "100%",
+    screen: "100vh"
   },
 
   /*
@@ -430,8 +430,8 @@ module.exports = {
   */
 
   minWidth: {
-    '0': '0',
-    full: '100%'
+    "0": "0",
+    full: "100%"
   },
 
   /*
@@ -449,9 +449,9 @@ module.exports = {
   */
 
   minHeight: {
-    '0': '0',
-    full: '100%',
-    screen: '100vh'
+    "0": "0",
+    full: "100%",
+    screen: "100vh"
   },
 
   /*
@@ -470,16 +470,16 @@ module.exports = {
   */
 
   maxWidth: {
-    xs: '20rem',
-    sm: '30rem',
-    md: '40rem',
-    lg: '50rem',
-    xl: '60rem',
-    '2xl': '70rem',
-    '3xl': '80rem',
-    '4xl': '90rem',
-    '5xl': '100rem',
-    full: '100%'
+    xs: "20rem",
+    sm: "30rem",
+    md: "40rem",
+    lg: "50rem",
+    xl: "60rem",
+    "2xl": "70rem",
+    "3xl": "80rem",
+    "4xl": "90rem",
+    "5xl": "100rem",
+    full: "100%"
   },
 
   /*
@@ -497,8 +497,8 @@ module.exports = {
   */
 
   maxHeight: {
-    full: '100%',
-    screen: '100vh'
+    full: "100%",
+    screen: "100vh"
   },
 
   /*
@@ -517,18 +517,18 @@ module.exports = {
   */
 
   padding: {
-    px: '1px',
-    '0': '0',
-    '1': '0.25rem',
-    '2': '0.5rem',
-    '3': '0.75rem',
-    '4': '1rem',
-    '5': '1.25rem',
-    '6': '1.5rem',
-    '8': '2rem',
-    '12': '3rem',
-    '16': '4rem',
-    '20': '5rem'
+    px: "1px",
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.25rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "12": "3rem",
+    "16": "4rem",
+    "20": "5rem"
   },
 
   /*
@@ -547,18 +547,18 @@ module.exports = {
   */
 
   margin: {
-    auto: 'auto',
-    px: '1px',
-    '0': '0',
-    '1': '0.25rem',
-    '2': '0.5rem',
-    '3': '0.75rem',
-    '4': '1rem',
-    '5': '1.15rem',
-    '6': '1.5rem',
-    '8': '2rem',
-    '12': '3rem',
-    '16': '4rem'
+    auto: "auto",
+    px: "1px",
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.15rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "12": "3rem",
+    "16": "4rem"
   },
 
   /*
@@ -577,16 +577,16 @@ module.exports = {
   */
 
   negativeMargin: {
-    px: '1px',
-    '0': '0',
-    '1': '0.25rem',
-    '2': '0.5rem',
-    '3': '0.75rem',
-    '4': '1rem',
-    '6': '1.5rem',
-    '8': '2rem',
-    '12': '3rem',
-    '14': '3.5rem'
+    px: "1px",
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "12": "3rem",
+    "14": "3.5rem"
   },
 
   /*
@@ -606,8 +606,8 @@ module.exports = {
   */
 
   shadows: {
-    default: '0 1px 3px 0 rgba(34,41,47,0.15)',
-    lg: '0 3px 9px 0 rgba(34,41,47,0.075)'
+    default: "0 1px 3px 0 rgba(34,41,47,0.15)",
+    lg: "0 3px 9px 0 rgba(34,41,47,0.075)"
   },
 
   /*
@@ -624,9 +624,9 @@ module.exports = {
   */
 
   zIndex: {
-    auto: 'auto',
-    '0': 0,
-    '10': 10
+    auto: "auto",
+    "0": 0,
+    "10": 10
   },
 
   /*
@@ -643,11 +643,11 @@ module.exports = {
   */
 
   opacity: {
-    '0': '0',
-    '25': '.25',
-    '50': '.5',
-    '75': '.75',
-    '100': '1'
+    "0": "0",
+    "25": ".25",
+    "50": ".5",
+    "75": ".75",
+    "100": "1"
   },
 
   /*
@@ -665,7 +665,7 @@ module.exports = {
   */
 
   svgFill: {
-    current: 'currentColor'
+    current: "currentColor"
   },
 
   /*
@@ -683,7 +683,7 @@ module.exports = {
   */
 
   svgStroke: {
-    current: 'currentColor'
+    current: "currentColor"
   },
 
   /*
@@ -701,51 +701,51 @@ module.exports = {
   */
 
   modules: {
-    appearance: ['responsive'],
-    backgroundAttachment: ['responsive'],
-    backgroundColors: ['responsive', 'hover'],
-    backgroundPosition: ['responsive'],
-    backgroundRepeat: ['responsive'],
-    backgroundSize: ['responsive'],
-    borderColors: ['responsive', 'hover'],
-    borderRadius: ['responsive'],
-    borderStyle: ['responsive'],
-    borderWidths: ['responsive'],
-    cursor: ['responsive'],
-    display: ['responsive'],
-    flexbox: ['responsive'],
+    appearance: ["responsive"],
+    backgroundAttachment: ["responsive"],
+    backgroundColors: ["responsive", "hover"],
+    backgroundPosition: ["responsive"],
+    backgroundRepeat: ["responsive"],
+    backgroundSize: ["responsive"],
+    borderColors: ["responsive", "hover"],
+    borderRadius: ["responsive"],
+    borderStyle: ["responsive"],
+    borderWidths: ["responsive"],
+    cursor: ["responsive"],
+    display: ["responsive"],
+    flexbox: ["responsive"],
     float: [],
-    fonts: ['responsive'],
-    fontWeights: ['responsive'],
-    height: ['responsive'],
-    leading: ['responsive'],
-    lists: ['responsive'],
-    margin: ['responsive', 'hover', 'group-hover'],
-    maxHeight: ['responsive'],
-    maxWidth: ['responsive'],
-    minHeight: ['responsive'],
-    minWidth: ['responsive'],
-    negativeMargin: ['responsive'],
-    opacity: ['responsive'],
-    overflow: ['responsive'],
-    padding: ['responsive', 'hover'],
-    pointerEvents: ['responsive'],
-    position: ['responsive'],
-    resize: ['responsive'],
-    shadows: ['responsive', 'hover'],
+    fonts: ["responsive"],
+    fontWeights: ["responsive"],
+    height: ["responsive"],
+    leading: ["responsive"],
+    lists: ["responsive"],
+    margin: ["responsive", "hover", "group-hover"],
+    maxHeight: ["responsive"],
+    maxWidth: ["responsive"],
+    minHeight: ["responsive"],
+    minWidth: ["responsive"],
+    negativeMargin: ["responsive"],
+    opacity: ["responsive"],
+    overflow: ["responsive"],
+    padding: ["responsive", "hover"],
+    pointerEvents: ["responsive"],
+    position: ["responsive"],
+    resize: ["responsive"],
+    shadows: ["responsive", "hover"],
     svgFill: [],
     svgStroke: [],
-    textAlign: ['responsive'],
-    textColors: ['responsive', 'hover', 'group-hover'],
-    textSizes: ['responsive'],
-    textStyle: ['responsive', 'hover'],
-    tracking: ['responsive'],
-    userSelect: ['responsive'],
-    verticalAlign: ['responsive'],
-    visibility: ['responsive'],
-    whitespace: ['responsive'],
-    width: ['responsive'],
-    zIndex: ['responsive']
+    textAlign: ["responsive"],
+    textColors: ["responsive", "hover", "group-hover"],
+    textSizes: ["responsive"],
+    textStyle: ["responsive", "hover"],
+    tracking: ["responsive"],
+    userSelect: ["responsive"],
+    verticalAlign: ["responsive"],
+    visibility: ["responsive"],
+    whitespace: ["responsive"],
+    width: ["responsive"],
+    zIndex: ["responsive"]
   },
 
   /*
@@ -759,8 +759,8 @@ module.exports = {
   */
 
   options: {
-    prefix: '',
+    prefix: "",
     important: false,
-    separator: ':'
+    separator: ":"
   }
 };

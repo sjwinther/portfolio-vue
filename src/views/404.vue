@@ -7,13 +7,13 @@
 
 <script>
 export default {
-  name: 'MissingPage',
+  name: "MissingPage",
   metaInfo: {
-    title: '404'
+    title: "404"
   },
   methods: {
     redirect() {
-      return this.$router.push('/404');
+      return this.$router.push("/404");
     }
   },
   beforeMount() {
@@ -21,7 +21,3 @@ export default {
   }
 };
 </script>
-
-<style>
-
-</style>

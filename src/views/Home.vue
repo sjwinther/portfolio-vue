@@ -26,10 +26,6 @@
 
 <script>
 export default {
-  props: ['projects']
+  props: ["projects"]
 };
 </script>
-
-<style>
-
-</style>

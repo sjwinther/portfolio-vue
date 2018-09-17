@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import MissingPage from './404';
+import MissingPage from "./404";
 
 export default {
-  name: 'Project',
-  props: ['projects', 'loading', 'uid'],
+  name: "Project",
+  props: ["projects", "loading", "uid"],
   components: {
     MissingPage
   },
@@ -26,12 +26,14 @@ export default {
         title: this.projectTitle
       };
     }
-    return { title: '' };
+    return { title: "" };
   },
   computed: {
     project() {
       if (this.projects) {
-        return this.projects[this.projects.findIndex(project => project.uid === this.uid)];
+        return this.projects[
+          this.projects.findIndex(project => project.uid === this.uid)
+        ];
       }
       return null;
     },
@@ -42,19 +44,19 @@ export default {
       const date = this.project.data.date;
       const month = date.substring(5, 7);
       let year = date.substring(2, 4);
-      let season = '';
+      let season = "";
       if (month < 3) {
-        season = 'Winter';
-        year = --year + '/' + ++year;
+        season = "Winter";
+        year = --year + "/" + ++year;
       } else if (month == 12) {
-        season = 'Winter';
-        year = year + '/' + ++year;
+        season = "Winter";
+        year = year + "/" + ++year;
       } else if (month < 6 && month > 2) {
-        season = 'Spring';
+        season = "Spring";
       } else if (month < 9 && month > 5) {
-        season = 'Summer';
+        season = "Summer";
       } else if (month < 12 && month > 8) {
-        season = 'Fall';
+        season = "Fall";
       }
       return season + " '" + year;
     },
@@ -62,26 +64,30 @@ export default {
       return this.project.data.link;
     },
     prettyProjectLink() {
-      return this.projectLink.replace('https://', '').replace('http://', '');
+      return this.projectLink.replace("https://", "").replace("http://", "");
     },
     projectContent() {
-      const PrismicDOM = require('prismic-dom');
+      const PrismicDOM = require("prismic-dom");
 
       const projectContent = this.project.data.body.map(function(slice) {
         switch (slice.slice_type) {
-          case 'text':
+          case "text":
             return PrismicDOM.RichText.asHtml(slice.primary.text);
-          case 'image':
+          case "image":
             return `
               <figure class="-mx-2 sm:mx-0 lg:-mx-12">
                 <picture>
-                  <source srcset="${slice.primary.image.url}" media="(min-width: 576)" />
-                  <img src="${slice.primary.image.sm.url}" alt="${slice.primary.image_description}" />
+                  <source srcset="${
+                    slice.primary.image.url
+                  }" media="(min-width: 576)" />
+                  <img src="${
+                    slice.primary.image.sm.url
+                  }" alt="${slice.primary.image_description}" />
                 </picture>
                 <figcaption>${slice.primary.image_description}</figcaption>
               </figure>
           `;
-          case 'video':
+          case "video":
             return `
               <figure class="lg:-mx-12">
                 <video loop autoplay poster="${slice.primary.poster.url}">
@@ -90,13 +96,17 @@ export default {
                 <figcaption>${slice.primary.video_description}</figcaption>
               </figure>
           `;
-          case 'left-side_image':
+          case "left-side_image":
             return `
               <div class="flex flex-wrap items-center -mx-4">
                 <figure class="w-full md:w-1/2 px-4 md:pr-12">
                   <picture>
-                    <source srcset="${slice.primary.image.url}" media="(min-width: 576px)" />
-                    <img src="${slice.primary.image.sm.url}" alt="${slice.primary.image_description}" />
+                    <source srcset="${
+                      slice.primary.image.url
+                    }" media="(min-width: 576px)" />
+                    <img src="${
+                      slice.primary.image.sm.url
+                    }" alt="${slice.primary.image_description}" />
                   </picture>
                   <figcaption>${slice.primary.image_description}</figcaption>
                 </figure>
@@ -105,7 +115,7 @@ export default {
                 </div>
               </div>
           `;
-          case 'right-side_image':
+          case "right-side_image":
             return `
               <div class="flex flex-wrap flex-col-reverse md:flex-row items-center -mx-4">
                 <div class="w-full md:w-1/2 px-4">
@@ -113,14 +123,18 @@ export default {
                 </div>
                 <figure class="w-full md:w-1/2 md:pl-12 px-4">
                   <picture>
-                    <source srcset="${slice.primary.image.url}" media="(min-width: 576px)" />
-                    <img src="${slice.primary.image.sm.url}" alt="${slice.primary.image_description}" />
+                    <source srcset="${
+                      slice.primary.image.url
+                    }" media="(min-width: 576px)" />
+                    <img src="${
+                      slice.primary.image.sm.url
+                    }" alt="${slice.primary.image_description}" />
                   </picture>
                   <figcaption>${slice.primary.image_description}</figcaption>
                 </figure>
               </div>
           `;
-          case 'image_gallery':
+          case "image_gallery":
             return `
               <figure>
                 <div class="flex items-center -mx-2 lg:-mx-14">
@@ -129,12 +143,14 @@ export default {
                       return `
                         <div class="mx-2">
                           <picture>
-                            <source srcset="${item.gallery_image.url}" media="(min-width: 576px)" />
+                            <source srcset="${
+                              item.gallery_image.url
+                            }" media="(min-width: 576px)" />
                             <img src="${item.gallery_image.sm.url}" />
                           </picture>
                         </div>`;
                     })
-                    .join('')}
+                    .join("")}
                 </div>
                 <figcaption>${slice.primary.gallery_description}</figcaption>
               </figure>`;
@@ -146,7 +162,3 @@ export default {
   }
 };
 </script>
-
-<style>
-
-</style>
