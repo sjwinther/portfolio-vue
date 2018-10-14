@@ -10,14 +10,6 @@ export default {
   name: "MissingPage",
   metaInfo: {
     title: "404"
-  },
-  methods: {
-    redirect() {
-      return this.$router.push("/404");
-    }
-  },
-  beforeMount() {
-    this.redirect();
   }
 };
 </script>
