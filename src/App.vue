@@ -12,7 +12,7 @@
         </router-link>
       </div>
       <div class="py-3">
-        UX<span class="hidden sm:inline"> Designer</span>
+        <span class="hidden sm:inline">Frontend </span>Designer
       </div>
     </nav>
 
@@ -126,6 +126,10 @@ button,
   @apply .text-white .bg-blue;
 }
 
+.rotate--45 {
+  transform: rotate(-45deg);
+}
+
 @variants hover {
   .translate-y--1 {
     transform: translateY(-0.25rem);
@@ -138,6 +142,9 @@ button,
   }
   .translate-x--1 {
     transform: translateX(-0.25rem);
+  }
+  .translate-x-2-rotate--45 {
+    transform: translateX(0.5rem) rotate(-45deg);
   }
 }
 
