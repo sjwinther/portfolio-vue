@@ -21,7 +21,7 @@
     </main>
 
     <footer class="text-center border-t-2 border-grey-light py-6">
-        <a href="https://github.com/sjwinther/portfolio-vue" target="_blank" rel="noopener" class="inline-link">Work in progress</a>
+        <a href="https://github.com/sjwinther/portfolio-2019" target="_blank" rel="noopener" class="inline-link">Work in progress</a>
     </footer>
 
   </div>
